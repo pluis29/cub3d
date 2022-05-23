@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/21 14:27:50 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:40:58 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ typedef struct s_mode
 	char	*map_path;
 	int		map_fd;
 	char	**all_map;
+
+
+	char	**aux;
+
 
 	int		texture_NO;
 	int		texture_SO;

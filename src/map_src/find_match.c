@@ -6,12 +6,11 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 23:20:05 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/21 21:03:19 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:47:18 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "libft.h"
 
 void	find_texture(t_mode *mode, int i)
 {
@@ -40,14 +39,16 @@ void	find_texture(t_mode *mode, int i)
 		else
 			i++;
 	}
-	printf("oxi\n");
 }
 
 void	find_rgb(t_mode *mode, int i)
 {
 	char	***color;
 
-	color = ft_calloc(3, sizeof(char *));
+	/**
+	 * cria separa as infos no ** entre ***0e1
+	 */
+	color = ft_calloc(3, sizeof(char **));
 	while(mode->all_map[i] != NULL)
 	{
 		if (ft_memcmp(mode->all_map[i], "F ", 2) == 0 && mode->rgb_f == 0)
@@ -63,45 +64,59 @@ void	find_rgb(t_mode *mode, int i)
 		else
 			i++;
 	}
-	printf("foi\n");
+	fix_rgb_pointers(mode, color, 0, 1, 0);
+	/* free_triple(color); */
+	/* send_rgb_struct(mode) */
+}
 
 
-
-
+void	fix_rgb_pointers(t_mode *mode, char ***color, int i, int x, int d)
+{
 	char ***temp;
-	int	x=1;
-	int	d=0;
-	temp = ft_calloc(4, sizeof(char *));
-
-	/* ta alocando cada numero no terceiro dimensao e na segunda ta baguncado o printf tem a solucao abaixo */
-	while (color[0][x] != NULL)
+	temp = ft_calloc(8, sizeof(char **));//temp q ser 8 pq depende de como preencheram pode acabar indo mais de um ** para o mesmo***
+	while (color[i] != NULL)
 	{
-		temp[d++] = ft_split(color[0][x++], ',');
+		x = 0;
+		while (color[i][x] != NULL)
+		{
+			/* printf("color content: %s\n", color[i][x]); */
+			temp[d++] = ft_split(color[i][x++], ',');
+		}
+		i++;
 	}
-	printf("foi2\n");
-	/* printf("%s\n", temp[0][1]); */
-
-
-	/* converter para int da para usar soluca de cima para colocar em ponteiro duplo e fica mais facil */
-	x=0;
-	d=0;
-	int c =0;
-	char **aqui;
-	aqui = ft_calloc(4, sizeof(char*));
+	x = 0;
+	d = 0;
+	i = 0;
+	mode->aux = (char **)ft_calloc(8, sizeof(char *));
 	while (temp[d] != NULL)
 	{
 		x=0;
 		while (temp[d][x] != NULL)
 		{
-			aqui[c++] = ft_strdup(temp[d][x++]);
+			/* printf("------content: %s\n", temp[d][x]); */
+			mode->aux[i++] = ft_strdup(temp[d][x++]);
 		}
 		d++;
 	}
+	/* free_triple(temp); */
+	/* for (int p=0; mode->aux[p] != NULL;p++) */
+	/* 	printf("foraaaa:   %s\n",mode->aux[p]); */
 }
-	/* printf("foraaaa:   %s\n",aqui[0]); */
-	/* printf("foraaaa:   %s\n",aqui[1]); */
-	/* printf("foraaaa:   %s\n",aqui[2]); */
 
+
+
+	/* x = 0; */
+	/* d = 0; */
+	/* while (temp[x] != NULL) */
+	/* { */
+	/* 	d =0; */
+	/* 	while (temp[x][d] != NULL) */
+	/* 	{ */
+	/* 		printf("x: %d || d: %d || %s\n",x,d, temp[x][d]); */
+	/* 		d++; */
+	/* 	} */
+	/* 	x++; */
+	/* } */
 
 
 	/* int c; */

@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/21 14:17:04 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:42:15 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	free_null(char **string);
 void	close_all(t_mode *mode, char *reason);
 void	find_texture(t_mode *mode, int i);
 void	find_rgb(t_mode *mode, int i);
+void	fix_rgb_pointers(t_mode *mode, char ***color, int i, int x, int d);
 
 #endif
