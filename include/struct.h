@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/23 19:40:58 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/28 02:23:35 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define EMPTY_FILE "empty map file"
 # define WRONG_TYPE_FILE "Wrong Type of file. Is need .cub"
 # define FILE_NOT_FOUND "File not found"
+# define WRONG_RGB "Wrong usage of rgb. R,G,B (0 >= && <=255)"
 
 typedef enum e_bool
 {
@@ -53,7 +54,7 @@ typedef struct s_mode
 	char	**all_map;
 
 
-	char	**aux;
+	char	**aux_color;
 
 
 	int		texture_NO;

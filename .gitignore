@@ -1,0 +1,4 @@
+include/libft/obj/**
+include/libft/obj/
+obj/
+include/libft/libft.a

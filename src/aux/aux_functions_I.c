@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:39:27 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/21 00:36:12 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:28:04 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,15 @@ void	close_all(t_mode *mode, char *reason)
 	 * mode->all_map
 	 * mode->utils.texture
 	 * mode->utils.rgb
+	 * mode->aux
 	 *
-	 * printf("Error\n%s\n", reason);
+	 *
+	 *
+	 * SERA??
+	 * --rgb
+	 * colors
+	 * temp
+	 *
 	 * */
-}
-
-void	free_null(char **string)
-{
-	if (*string)
-		free(*string);
-	*string = NULL;
+	/* printf("%s\n", reason); */
 }

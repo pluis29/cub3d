@@ -6,12 +6,11 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:21:18 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/21 12:28:43 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/28 01:57:44 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "libft/libft.h"
 
 int	main(int ac, char *av[])
 {
@@ -19,7 +18,7 @@ int	main(int ac, char *av[])
 
 	//if (ac != 2)
 	ft_memset(&mode, 0, sizeof(mode));
-	if (verify_map(&mode, av) == true)
+	if (map_validation(&mode, av) == true)
 		printf("problema no mapa fechando tudo\n");
 
 	return (0);

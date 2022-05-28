@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:58:46 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/19 20:29:15 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:42:42 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ typedef struct s_variable
 	char		*tmp;
 }	t_variable;
 
+char	*ft_free_null(char **string);
+void	ft_free_pointer(void **ptr);
+char	*ft_free_doublePtr(char **str);
+char	*ft_free_triplePtr(char ***str);
+int		ft_checkIsNumber(const char *str);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);

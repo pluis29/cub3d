@@ -16,7 +16,7 @@ FILE_NOT_FOUND	include/struct.h	18;"	d
 FT	Makefile	/^FT				=	ft$/;"	m
 F_AUX	Makefile	/^F_AUX			=	aux_functions_I.c$/;"	m
 F_MANDATORY	include/libft/Makefile	/^F_MANDATORY	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \\$/;"	m
-F_MAP_SRC	Makefile	/^F_MAP_SRC		=	scope_map.c map_validation.c find_match.c$/;"	m
+F_MAP_SRC	Makefile	/^F_MAP_SRC		=	scope_map.c map_validation.c find_match.c texture.c rgb.c$/;"	m
 F_SRC	Makefile	/^F_SRC			=	main.c $(AUX) $(MAP_SRC)$/;"	m
 INC	Makefile	/^INC				=	-I $(P_INCLUDE) -I $(P_LIBFT)$/;"	m
 INC	include/libft/Makefile	/^INC			=	-I .$/;"	m
@@ -44,8 +44,10 @@ RM	include/libft/Makefile	/^RM			=	rm -rf$/;"	m
 SRC	include/libft/Makefile	/^SRC			=	$(MANDATORY)$/;"	m
 STRUCT_H	include/struct.h	14;"	d
 TEXTURE	include/struct.h	/^	TEXTURE,$/;"	e	enum:e_state
+WRONG_RGB	include/struct.h	19;"	d
 WRONG_TYPE_FILE	include/struct.h	17;"	d
 all_map	include/struct.h	/^	char	**all_map;$/;"	m	struct:s_mode
+aux_color	include/struct.h	/^	char	**aux_color;$/;"	m	struct:s_mode
 blue	include/struct.h	/^	int	blue;$/;"	m	struct:s_rgb
 buf	include/libft/libft.h	/^	char		*buf;$/;"	m	struct:s_variable
 cell_rgb	include/struct.h	/^	t_rgb	cell_rgb;$/;"	m	struct:s_mode
@@ -53,17 +55,21 @@ close_all	src/aux/aux_functions_I.c	/^void	close_all(t_mode *mode, char *reason)
 e_bool	include/struct.h	/^typedef enum e_bool$/;"	g
 e_state	include/struct.h	/^typedef enum e_state$/;"	g
 false	include/struct.h	/^	false,$/;"	e	enum:e_bool
-find_rgb	src/map_src/find_match.c	/^void	find_rgb(t_mode *mode, int i)$/;"	f
-find_texture	src/map_src/find_match.c	/^void	find_texture(t_mode *mode, int i)$/;"	f
+find_rgb	src/map_src/rgb.c	/^void	find_rgb(t_mode *mode, int i)$/;"	f
+find_texture	src/map_src/texture.c	/^void	find_texture(t_mode *mode, int i)$/;"	f
 floor_rgb	include/struct.h	/^	t_rgb	floor_rgb;$/;"	m	struct:s_mode
-free_null	src/aux/aux_functions_I.c	/^void	free_null(char **string)$/;"	f
 ft_atoi	include/libft/mandatory/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f
 ft_bzero	include/libft/mandatory/ft_bzero.c	/^void	ft_bzero(void *s, size_t len)$/;"	f
 ft_calloc	include/libft/mandatory/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f
+ft_checkIsNumber	include/libft/mandatory/ft_checkIsNumber.c	/^int ft_checkIsNumber(const char *str)$/;"	f
 ft_cmp	include/libft/mandatory/ft_cmp.c	/^int	ft_cmp(const void *string1, const void *string2)$/;"	f
 ft_cmp_byStart	include/libft/mandatory/ft_cmp_byStart.c	/^int	ft_cmp_byStart(const void *string1, const void *string2, int start)$/;"	f
 ft_countword	include/libft/mandatory/ft_split.c	/^static size_t	ft_countword(const char *s, char c)$/;"	f	file:
 ft_free	include/libft/mandatory/ft_split.c	/^static char	**ft_free(char **tab, size_t len)$/;"	f	file:
+ft_free_doublePtr	include/libft/mandatory/ft_free_doublePtr.c	/^char	*ft_free_doublePtr(char **str)$/;"	f
+ft_free_null	include/libft/mandatory/ft_free_null.c	/^char	*ft_free_null(char **string)$/;"	f
+ft_free_pointer	include/libft/mandatory/ft_free_pointer.c	/^void	ft_free_pointer(void **ptr)$/;"	f
+ft_free_triplePtr	include/libft/mandatory/ft_free_triplePtr.c	/^char	*ft_free_triplePtr(char ***str)$/;"	f
 ft_get_next_line	include/libft/mandatory/ft_get_next_line.c	/^int	ft_get_next_line(int fd, char **line)$/;"	f
 ft_guide	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_guide(int index, char **plus, char **line)$/;"	f	file:
 ft_isalnum	include/libft/mandatory/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
@@ -102,13 +108,16 @@ ft_transfer	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_transfer(
 green	include/struct.h	/^	int	green;$/;"	m	struct:s_rgb
 index	include/libft/libft.h	/^	ssize_t		index;$/;"	m	struct:s_variable
 main	src/main.c	/^int	main(int ac, char *av[])$/;"	f
-map_exist	src/map_src/map_validation.c	/^void	map_exist(t_mode *mode, char **av)$/;"	f
+map_existance	src/map_src/scope_map.c	/^void	map_existance(t_mode *mode, char **av)$/;"	f
 map_fd	include/struct.h	/^	int		map_fd;$/;"	m	struct:s_mode
 map_path	include/struct.h	/^	char	*map_path;$/;"	m	struct:s_mode
-read_map_file	src/map_src/map_validation.c	/^void	read_map_file(t_mode *mode, int lines)$/;"	f
+read_map_file	src/map_src/scope_map.c	/^void	read_map_file(t_mode *mode, int lines)$/;"	f
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_c	include/struct.h	/^	int		rgb_c;$/;"	m	struct:s_mode
 rgb_f	include/struct.h	/^	int		rgb_f;$/;"	m	struct:s_mode
+rgb_separatePtr	src/map_src/rgb.c	/^void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d)$/;"	f
+rgb_setup_toStruct	src/map_src/rgb.c	/^t_rgb	rgb_setup_toStruct(t_mode *mode, int tag)$/;"	f
+rgb_validation_Setup_colorsStruct	src/map_src/rgb.c	/^void	rgb_validation_Setup_colorsStruct(t_mode *mode)$/;"	f
 s_mode	include/struct.h	/^typedef struct s_mode$/;"	s
 s_rgb	include/struct.h	/^typedef struct s_rgb$/;"	s
 s_utils	include/struct.h	/^typedef struct s_utils$/;"	s

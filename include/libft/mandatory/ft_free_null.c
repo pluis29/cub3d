@@ -1,15 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_validation.c                                   :+:      :+:    :+:   */
+/*   ft_free_null.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/20 18:52:28 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 02:07:10 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/05/26 15:27:01 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/05/26 15:31:13 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub.h"
-#include "struct.h"
-#include <stdio.h>
+#include "libft.h"
+
+char	*ft_free_null(char **string)
+{
+	if (*string)
+		free(*string);
+	*string = NULL;
+	return (NULL);
+}
+
+// Set free and null in a char *
+// It's necessary pass a char **
+// example &str if is a char *

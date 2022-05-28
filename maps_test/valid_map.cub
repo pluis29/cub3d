@@ -3,9 +3,9 @@ SO ./assets/textures/purple_block.xpm
 EA ./assets/textures/brick_block.xpm
 WE ./assets/textures/blue_block.xpm
 
-C 0, 255, 0
+q 243,123, 112
 
-F 255, 25, 255
+F f255,221,232
 
 1111111111111111111111111111111111111111
 1000000000000000000000000000000000000001
