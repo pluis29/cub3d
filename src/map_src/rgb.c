@@ -6,12 +6,15 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:56:06 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 02:46:05 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/28 18:12:17 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "libft.h"
+
+static t_rgb	rgb_setup_toStruct(t_mode *mode, int tag);
+static void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d);
+static void	rgb_validation_Setup_colorsStruct(t_mode *mode);
 
 void	find_rgb(t_mode *mode, int i)
 {
@@ -34,8 +37,10 @@ void	find_rgb(t_mode *mode, int i)
 			i++;
 	}
 	if (mode->rgb_c == 0 || mode->rgb_f == 0)
-		/* ft_free_triplePtr(color); */
-		printf("------ERRROR----f ou c errado\n");
+	{
+		ft_free_triplePtr(color);
+		close_all(mode, RGB_NOT_SPECIFIED);
+	}
 	rgb_separatePtr(mode, color, 0, 1, 0);
 	ft_free_triplePtr(color);
 	rgb_validation_Setup_colorsStruct(mode);
@@ -45,7 +50,7 @@ void	find_rgb(t_mode *mode, int i)
  * @brief remove comma from string and transform it into a double pointer for
  * easy access and movement.
 */
-void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d)
+static void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d)
 {
 	char ***temp;
 	temp = ft_calloc(8, sizeof(char **));//temp q ser 8 pq depende de como preencheram pode acabar indo mais de um ** para o mesmo***
@@ -68,31 +73,19 @@ void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d)
 		d++;
 	}
 	ft_free_triplePtr(temp);
-	for (int p=0; mode->aux_color[p] != NULL;p++)
-		printf("foraaaa:   %s\n",mode->aux_color[p]);
 }
 
-void	rgb_validation_Setup_colorsStruct(t_mode *mode)
+static void	rgb_validation_Setup_colorsStruct(t_mode *mode)
 {
 	int i;
 
-	if (ft_cmp(mode->aux_color[0], "F") != 0)
-			/* close_all(mode, WRONG_RGB); */
-			printf("Letra do rgb errado\n");
-	if (ft_cmp(mode->aux_color[4], "C") != 0)
-			/* close_all(mode, WRONG_RGB); */
-			printf("Letra do rgb errado\n");
 	i = 1;
 	while(mode->aux_color[i] != NULL)
 	{
 		if (i == 4)
 			i = 5;
 		if (ft_checkIsNumber(mode->aux_color[i]) == 0)
-		{
-			/* close_all(mode, WRONG_RGB); */
-			printf("deu ruim mano\n");
-			break ; //esse sai dps
-		}
+			close_all(mode, WRONG_RGB);
 		i++;
 	}
 	mode->floor_rgb = rgb_setup_toStruct(mode, 1);
@@ -102,12 +95,9 @@ void	rgb_validation_Setup_colorsStruct(t_mode *mode)
 
 /**
  * @brief Set the values in rgb struct respectively
- *
  * @param tag=1 for floor and 2 for ceiling
- *
- * @return struct of rgb (t_rgb) with values setted
  */
-t_rgb	rgb_setup_toStruct(t_mode *mode, int tag)
+static t_rgb	rgb_setup_toStruct(t_mode *mode, int tag)
 {
 	t_rgb	temp_color;
 
@@ -126,9 +116,6 @@ t_rgb	rgb_setup_toStruct(t_mode *mode, int tag)
 	if (temp_color.red < 0 || temp_color.green < 0 || temp_color.blue < 0
 			|| temp_color.red > 255 || temp_color.green > 255
 			|| temp_color.blue > 255)
-	{
-		/* close_all(mode, WRONG_RGB); */
-		printf("valor errado\n");
-	}
+		close_all(mode, WRONG_RGB);
 	return (temp_color);
 }

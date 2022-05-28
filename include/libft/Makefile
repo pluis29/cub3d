@@ -6,7 +6,7 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 00:11:49 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/05/26 15:43:43 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/05/28 17:28:47 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ F_MANDATORY	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 				ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 				ft_putnbr_fd.c ft_cmp.c ft_cmp_byStart.c ft_get_next_line.c \
 				ft_checkIsNumber.c ft_free_null.c ft_free_doublePtr.c \
-				ft_free_pointer.c ft_free_triplePtr.c
+				ft_free_triplePtr.c
 
 SRC			=	$(MANDATORY)
 

@@ -6,7 +6,7 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:39:46 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/05/27 18:01:21 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/05/28 17:31:31 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ P_OBJ			=	./obj/
 FT				=	ft
 P_LIBFT			=	$(P_INCLUDE)libft/
 
-F_AUX			=	aux_functions_I.c
+F_AUX			=	exit_and_free.c
 
-F_MAP_SRC		=	scope_map.c map_validation.c find_match.c texture.c rgb.c
+F_MAP_SRC		=	map_redirect.c texture.c rgb.c
 F_SRC			=	main.c $(AUX) $(MAP_SRC)
 
 AUX				=	$(addprefix $(P_AUX), $(F_AUX))
