@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:21:18 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 18:12:04 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/29 16:19:23 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,3 @@ int	main(int ac, char *av[])
 	just_close(&mode);
 	return (0);
 }
-
-/*
-borda deve ser 1
-tamanho do mapa
-arquivo existe
-arquivo é .cub
-mapa vazio
-tem player
-caracteres validos
-texturas
-cors
-empty line
-*/

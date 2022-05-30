@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 02:23:35 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/29 14:04:17 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,14 @@ typedef struct s_mode
 	t_utils	utils;
 	t_rgb	cell_rgb;
 	t_rgb	floor_rgb;
-
 	char	*map_path;
 	int		map_fd;
 	char	**all_map;
 	char	**aux_color;
-
-
-	int		texture_NO;
-	int		texture_SO;
-	int		texture_EA;
-	int		texture_WE;
+	int		texture_no;
+	int		texture_so;
+	int		texture_ea;
+	int		texture_we;
 	int		rgb_f;
 	int		rgb_c;
 }	t_mode;

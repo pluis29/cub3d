@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:10:37 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 18:11:59 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/29 19:53:32 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	just_close(t_mode *mode)
 static void	free_struct(t_mode *mode)
 {
 	if (mode->utils.texture != NULL)
-		ft_free_triplePtr(mode->utils.texture);
+		ft_free_triple_ptr(mode->utils.texture);
 	if (mode->map_path != NULL)
 		ft_free_null(&mode->map_path);
 	if (mode->all_map != NULL)
-		ft_free_doublePtr(mode->all_map);
+		ft_free_double_ptr(mode->all_map);
 	if (mode->all_map != NULL)
-		ft_free_doublePtr(mode->aux_color);
+		ft_free_double_ptr(mode->aux_color);
 }

@@ -66,14 +66,14 @@ free_struct	src/aux/exit_and_free.c	/^static void	free_struct(t_mode *mode)$/;"	
 ft_atoi	include/libft/mandatory/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f
 ft_bzero	include/libft/mandatory/ft_bzero.c	/^void	ft_bzero(void *s, size_t len)$/;"	f
 ft_calloc	include/libft/mandatory/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f
-ft_checkIsNumber	include/libft/mandatory/ft_checkIsNumber.c	/^int ft_checkIsNumber(const char *str)$/;"	f
+ft_check_is_number	include/libft/mandatory/ft_check_is_number.c	/^int	ft_check_is_number(const char *str)$/;"	f
 ft_cmp	include/libft/mandatory/ft_cmp.c	/^int	ft_cmp(const void *string1, const void *string2)$/;"	f
-ft_cmp_byStart	include/libft/mandatory/ft_cmp_byStart.c	/^int	ft_cmp_byStart(const void *string1, const void *string2, int start)$/;"	f
+ft_cmp_by_start	include/libft/mandatory/ft_cmp_by_start.c	/^int	ft_cmp_by_start(const void *string1, const void *string2, int start)$/;"	f
 ft_countword	include/libft/mandatory/ft_split.c	/^static size_t	ft_countword(const char *s, char c)$/;"	f	file:
 ft_free	include/libft/mandatory/ft_split.c	/^static char	**ft_free(char **tab, size_t len)$/;"	f	file:
-ft_free_doublePtr	include/libft/mandatory/ft_free_doublePtr.c	/^char	*ft_free_doublePtr(char **str)$/;"	f
+ft_free_double_ptr	include/libft/mandatory/ft_free_double_ptr.c	/^char	*ft_free_double_ptr(char **str)$/;"	f
 ft_free_null	include/libft/mandatory/ft_free_null.c	/^char	*ft_free_null(char **string)$/;"	f
-ft_free_triplePtr	include/libft/mandatory/ft_free_triplePtr.c	/^char	*ft_free_triplePtr(char ***str)$/;"	f
+ft_free_triple_ptr	include/libft/mandatory/ft_free_triple_ptr.c	/^char	*ft_free_triple_ptr(char ***str)$/;"	f
 ft_get_next_line	include/libft/mandatory/ft_get_next_line.c	/^int	ft_get_next_line(int fd, char **line)$/;"	f
 ft_guide	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_guide(int index, char **plus, char **line)$/;"	f	file:
 ft_isalnum	include/libft/mandatory/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
@@ -121,9 +121,9 @@ read_map_file	src/map_src/map_redirect.c	/^static void	read_map_file(t_mode *mod
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_c	include/struct.h	/^	int		rgb_c;$/;"	m	struct:s_mode
 rgb_f	include/struct.h	/^	int		rgb_f;$/;"	m	struct:s_mode
-rgb_separatePtr	src/map_src/rgb.c	/^static void	rgb_separatePtr(t_mode *mode, char ***color, int i, int x, int d)$/;"	f	file:
-rgb_setup_toStruct	src/map_src/rgb.c	/^static t_rgb	rgb_setup_toStruct(t_mode *mode, int tag)$/;"	f	file:
-rgb_validation_Setup_colorsStruct	src/map_src/rgb.c	/^static void	rgb_validation_Setup_colorsStruct(t_mode *mode)$/;"	f	file:
+rgb_separate_ptr	src/map_src/rgb.c	/^static void	rgb_separate_ptr(t_mode *mode, char ***color, int i, int x)$/;"	f	file:
+rgb_setup_to_struct	src/map_src/rgb.c	/^static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag)$/;"	f	file:
+rgb_validation_setup_colors_struct	src/map_src/rgb.c	/^static void	rgb_validation_setup_colors_struct(t_mode *mode)$/;"	f	file:
 s_mode	include/struct.h	/^typedef struct s_mode$/;"	s
 s_rgb	include/struct.h	/^typedef struct s_rgb$/;"	s
 s_utils	include/struct.h	/^typedef struct s_utils$/;"	s
@@ -135,10 +135,12 @@ t_state	include/struct.h	/^}	t_state;$/;"	t	typeref:enum:e_state
 t_utils	include/struct.h	/^}	t_utils;$/;"	t	typeref:struct:s_utils
 t_variable	include/libft/libft.h	/^}	t_variable;$/;"	t	typeref:struct:s_variable
 texture	include/struct.h	/^	char	***texture;$/;"	m	struct:s_utils
-texture_EA	include/struct.h	/^	int		texture_EA;$/;"	m	struct:s_mode
-texture_NO	include/struct.h	/^	int		texture_NO;$/;"	m	struct:s_mode
-texture_SO	include/struct.h	/^	int		texture_SO;$/;"	m	struct:s_mode
-texture_WE	include/struct.h	/^	int		texture_WE;$/;"	m	struct:s_mode
+texture_ea	include/struct.h	/^	int		texture_ea;$/;"	m	struct:s_mode
+texture_existance	src/map_src/texture.c	/^void	texture_existance(t_mode *mode)$/;"	f
+texture_no	include/struct.h	/^	int		texture_no;$/;"	m	struct:s_mode
+texture_so	include/struct.h	/^	int		texture_so;$/;"	m	struct:s_mode
+texture_valid_path_and_empty	src/map_src/texture.c	/^static void	texture_valid_path_and_empty(t_mode *mode)$/;"	f	file:
+texture_we	include/struct.h	/^	int		texture_we;$/;"	m	struct:s_mode
 tmp	include/libft/libft.h	/^	char		*tmp;$/;"	m	struct:s_variable
 true	include/struct.h	/^	true$/;"	e	enum:e_bool
 utils	include/struct.h	/^	t_utils	utils;$/;"	m	struct:s_mode

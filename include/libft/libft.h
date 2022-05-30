@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:58:46 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/28 17:28:35 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/29 15:59:26 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ typedef struct s_variable
 	char		*tmp;
 }	t_variable;
 
+int		ft_cmp_by_start(const void *string1, const void *string2, int start);
 char	*ft_free_null(char **string);
-char	*ft_free_doublePtr(char **str);
-char	*ft_free_triplePtr(char ***str);
-int		ft_checkIsNumber(const char *str);
+char	*ft_free_double_ptr(char **str);
+char	*ft_free_triple_ptr(char ***str);
+int		ft_check_is_number(const char *str);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -52,7 +53,6 @@ int		ft_isalpha(int c);
 int		ft_atoi(const char *nptr);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_cmp(const void *string1, const void *string2);
-int		ft_cmp_byStart(const void *string1, const void *string2, int start);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_get_next_line(int fd, char **line);
