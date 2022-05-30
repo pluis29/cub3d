@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 17:10:37 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 19:53:32 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:19:26 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	free_struct(t_mode *mode);
 void	close_all(t_mode *mode, char *reason)
 {
 	free_struct(mode);
-	printf("%s\n", reason);
+	printf("%sERROR%s -- %s\n", BRED, RESET, reason);
 	exit(EXIT_FAILURE);
 }
 

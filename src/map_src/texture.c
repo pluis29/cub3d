@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:56:07 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 21:08:25 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:51:27 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ void	find_texture(t_mode *mode, int i)
 	}
 }
 
+void	texture_existance(t_mode *mode)
+{
+	int	i;
+
+	i = 0;
+	while (mode->utils.texture[i] != NULL)
+	{
+		if (ft_cmp_by_start(mode->utils.texture[i][1], ".xpm",
+				(ft_strlen(mode->utils.texture[i][1]) - 4)) != 0)
+			close_all(mode, WRONG_TEXTURE_TYPE_FILE);
+		i++;
+	}
+	texture_valid_path_and_empty(mode);
+}
+
 static void	texture_valid_path_and_empty(t_mode *mode)
 {
 	int		i;
@@ -58,27 +73,10 @@ static void	texture_valid_path_and_empty(t_mode *mode)
 			close(temp_fd);
 			close_all(mode, FILE_NOT_FOUND);
 		}
-		printf("antes\n");
 		temp_read = read(temp_fd, &c, 1);
-		printf("depois\n");
 		close(temp_fd);
-		if (temp_read == 0)
+		if (temp_read <= 0)
 			close_all(mode, EMPTY_FILE);
 		i++;
 	}
-}
-
-void	texture_existance(t_mode *mode)
-{
-	int	i;
-
-	i = 0;
-	while (mode->utils.texture[i] != NULL)
-	{
-		if (ft_cmp_by_start(mode->utils.texture[i][1], ".xpm",
-				(ft_strlen(mode->utils.texture[i][1]) - 4)) != 0)
-			close_all(mode, WRONG_TEXTURE_TYPE_FILE);
-		i++;
-	}
-	texture_valid_path_and_empty(mode);
 }

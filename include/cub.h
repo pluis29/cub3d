@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 20:23:13 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:01:20 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "struct.h"
 # include "./libft/libft.h"
+# include "ansi_color.h"
 
 # include <stdio.h>
 # include <stdlib.h>
