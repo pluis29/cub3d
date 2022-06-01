@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:14:20 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 02:04:35 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 19:34:50 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ static void	read_map_file(t_mode *mode, int lines)
 		i++;
 	mode->all_map[i] = NULL;
 	close(mode->map_fd);
-	get_first_map_occurrence(mode);
+	get_first_last_map_occurrence(mode);
+	map_valid_bottom_and_top(mode);
 	return ;
 }

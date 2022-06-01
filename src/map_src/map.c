@@ -6,15 +6,16 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 20:09:41 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 02:03:37 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 19:11:37 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
+#include <stdio.h>
 
 static int	check_spaced_line(char *str_map_line);
 
-void	get_first_map_occurrence(t_mode *mode)
+void	get_first_last_map_occurrence(t_mode *mode)
 {
 	while (mode->all_map[mode->map_start_in] != NULL)
 	{
@@ -25,6 +26,8 @@ void	get_first_map_occurrence(t_mode *mode)
 				break ;
 		mode->map_start_in++;
 	}
+	while(mode->all_map[mode->map_end_in + 1] != NULL)
+		mode->map_end_in++;
 }
 
 static int	check_spaced_line(char *str_map_line)

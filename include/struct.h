@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 02:01:37 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 19:09:22 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define TEXTURE_NOT_SPECIFIED "Texture names not specified correctly"
 # define RGB_NOT_SPECIFIED "'C' ceilling or 'F' Floor, not specified correctly"
 # define WRONG_RGB "Wrong usage of RGB. (0 >= & <=255)"
+# define INVALID_MAP "Invalid map"
 
 typedef enum e_bool
 {
@@ -65,6 +66,7 @@ typedef struct s_mode
 
 	//map
 	int		map_start_in;
+	int		map_end_in;
 }	t_mode;
 
 #endif
