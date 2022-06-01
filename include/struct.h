@@ -6,13 +6,14 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 14:04:17 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 02:01:37 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
+# define INVALID_MAP_LEFT "Invalid map first column must be 1"
 # define EMPTY_FILE "Empty file"
 # define WRONG_CUB_TYPE_FILE "Wrong Type of file. Is need a .cub"
 # define WRONG_TEXTURE_TYPE_FILE "Wrong Type of file. Is need a .xpm"
@@ -61,6 +62,9 @@ typedef struct s_mode
 	int		texture_we;
 	int		rgb_f;
 	int		rgb_c;
+
+	//map
+	int		map_start_in;
 }	t_mode;
 
 #endif

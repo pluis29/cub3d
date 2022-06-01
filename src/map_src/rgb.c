@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:56:06 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 16:23:40 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 02:07:22 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	find_rgb(t_mode *mode, int i)
 	char	***color;
 
 	color = ft_calloc(3, sizeof(char **));
-	while (mode->all_map[i] != NULL)
+	while (mode->all_map[i] != NULL && i < mode->map_start_in)
 	{
 		if (ft_memcmp(mode->all_map[i], "F ", 2) == 0 && mode->rgb_f == 0)
 		{

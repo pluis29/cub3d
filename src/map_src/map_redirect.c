@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:14:20 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 20:50:20 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 02:04:35 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	map_validation(t_mode *mode, char **av)
 	if (mode->texture_ea == 0 || mode->texture_no == 0
 		|| mode->texture_so == 0 || mode->texture_we == 0)
 		close_all(mode, TEXTURE_NOT_SPECIFIED);
-	texture_existance(mode);
+	/* texture_extension(mode); */
 	find_rgb(mode, 0);
-	while (1)
-		;
+	/* while (1) */
+	/* 	; */
 	return (false);
 }
 
@@ -69,5 +69,6 @@ static void	read_map_file(t_mode *mode, int lines)
 		i++;
 	mode->all_map[i] = NULL;
 	close(mode->map_fd);
+	get_first_map_occurrence(mode);
 	return ;
 }

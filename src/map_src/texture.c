@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 17:56:07 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/30 18:51:27 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 02:06:27 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@ static void	texture_valid_path_and_empty(t_mode *mode);
 
 void	find_texture(t_mode *mode, int i)
 {
-	while (mode->all_map[i] != NULL)
+	while (mode->all_map[i] != NULL && i < mode->map_start_in)
 	{
-		if (ft_memcmp(mode->all_map[i], "NO", 2) == 0 && mode->texture_no == 0)
+		if (ft_memcmp(mode->all_map[i], "NO ", 3) == 0 && mode->texture_no == 0)
 		{
 			mode->utils.texture[0] = ft_split(mode->all_map[i], ' ');
 			mode->texture_no = 1;
 		}
-		if (ft_memcmp(mode->all_map[i], "SO", 2) == 0 && mode->texture_so == 0)
+		if (ft_memcmp(mode->all_map[i], "SO ", 3) == 0 && mode->texture_so == 0)
 		{
 			mode->utils.texture[1] = ft_split(mode->all_map[i], ' ');
 			mode->texture_so = 1;
 		}
-		if (ft_memcmp(mode->all_map[i], "EA", 2) == 0 && mode->texture_ea == 0)
+		if (ft_memcmp(mode->all_map[i], "EA ", 3) == 0 && mode->texture_ea == 0)
 		{
 			mode->utils.texture[2] = ft_split(mode->all_map[i], ' ');
 			mode->texture_ea = 1;
 		}
-		if (ft_memcmp(mode->all_map[i], "WE", 2) == 0 && mode->texture_we == 0)
+		if (ft_memcmp(mode->all_map[i], "WE ", 3) == 0 && mode->texture_we == 0)
 		{
 			mode->utils.texture[3] = ft_split(mode->all_map[i], ' ');
 			mode->texture_we = 1;
@@ -42,7 +42,7 @@ void	find_texture(t_mode *mode, int i)
 	}
 }
 
-void	texture_existance(t_mode *mode)
+void	texture_extension(t_mode *mode)
 {
 	int	i;
 
