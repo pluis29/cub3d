@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 19:09:22 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 23:36:32 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ typedef struct s_mode
 	//map
 	int		map_start_in;
 	int		map_end_in;
+	int		letter_map_found;
+	int		found_letter;
 }	t_mode;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 19:34:42 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/01 23:52:40 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	just_close(t_mode *mode);
 /* em criacao */
 /* void	count_map_lines(t_mode *mode); */
 void	get_first_last_map_occurrence(t_mode *mode);
-void	map_valid_bottom_and_top(t_mode *mode);
+void	check_blueprint(t_mode *mode);
 
 /* map validations */
 int		map_validation(t_mode *mode, char **av);
