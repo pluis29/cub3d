@@ -1,10 +1,9 @@
-WE ./assets/textures/blue_block.xpm
-EA ./assets/textures/brick_block.xpm
 NO ./assets/textures/red_block.xpm
-SO  ./assets/textures/purple_block.xpm
-
-C 243, 123, 112
-F 255, 221, 232
+SO ./assets/textures/purple_block.xpm
+EA ./assets/textures/brick_block.xpm
+WE ./assets/textures/blue_block.xpm
+C 0, 255,0
+F 255, 25,255
 
 11111111111111111111111111111111111111111
 100000000000001      10000000000000000001
@@ -23,3 +22,9 @@ F 255, 221, 232
 1000000000000000000000000000000000000001
 1000000000000000000000000000000000000001
 1111111111111111111111111111111111111111
+
+
+
+
+
+

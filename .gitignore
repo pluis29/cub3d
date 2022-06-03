@@ -3,3 +3,5 @@ include/libft/obj/
 obj/
 include/libft/libft.a
 cub3d
+.vscode/
+cub3d_destroyer

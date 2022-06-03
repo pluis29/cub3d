@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/28 17:10:37 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/01 23:25:33 by lpaulo-d         ###   ########.fr       */
+/*   Created: 2022/06/02 17:45:04 by lpaulo-d          #+#    #+#             */
+/*   Updated: 2022/06/03 13:12:16 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-
-static void	free_struct(t_mode *mode);
 
 void	close_all(t_mode *mode, char *reason)
 {
@@ -28,14 +26,12 @@ void	just_close(t_mode *mode)
 	exit(EXIT_SUCCESS);
 }
 
-static void	free_struct(t_mode *mode)
+void	free_struct(t_mode *mode)
 {
-	if (mode->utils.texture != NULL)
-		ft_free_triple_ptr(mode->utils.texture);
-	if (mode->map_path != NULL)
-		ft_free_null(&mode->map_path);
-	if (mode->all_map != NULL)
-		ft_free_double_ptr(mode->all_map);
-	if (mode->all_map != NULL)
-		ft_free_double_ptr(mode->aux_color);
+	if (mode->map_file != NULL)
+		ft_free_double_ptr(mode->map_file);
+	if (mode->temp_texture != NULL)
+		ft_free_triple_ptr(mode->temp_texture);
+	if (mode->temp_color != NULL)
+		ft_free_double_ptr(mode->temp_color);
 }
