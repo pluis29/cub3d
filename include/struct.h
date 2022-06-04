@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 18:21:11 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:33:34 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ typedef struct s_mode
 	t_rgb		floor_rgb;
 	t_texture	texture;
 
+	char		**blueprint;
 	/* all content from map file*/
 	char		**map_file;
 	char		***temp_texture;
 	char		**temp_color;
+	char		***temp_rgb;
 
 	int			map_end_in;
 	int			map_start_in;

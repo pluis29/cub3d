@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 18:45:29 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:23:26 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		main(int ac, char **av);
 void	check_end_of_file(t_mode *mode);
 
 /* rgb */
+void	valid_comma(t_mode *mode, char *str);
 void	find_rgb(t_mode *mode, int i);
 
 /* texture */

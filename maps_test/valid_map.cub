@@ -1,9 +1,9 @@
-NO ./.xpm/no_redbrick.xpm
-SO ./.xpm/so_redbrick.xpm
-EA ./.xpm/ea_redbrick.xpm
-WE ./.xpm/we_redbrick.xpm
+NO ./.xpm_1/no_redbrick.xpm
+SO ./.xpm_1/so_redbrick.xpm
+EA ./.xpm_1/ea_redbrick.xpm
+WE ./.xpm_1/we_redbrick.xpm
 
-C 100,200,225,200
+C 200, 200 200,
 F 122,122,122
 
 11111111111111111

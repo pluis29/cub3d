@@ -6,7 +6,7 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:39:46 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/06/03 18:25:10 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/06/04 19:23:41 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ P_OBJ			=	./obj/
 FT				=	ft
 P_LIBFT			=	$(P_INCLUDE)libft/
 
-F_AUX			=	exit_and_free.c map_file_aux.c blueprint_aux.c
+F_AUX			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c
 
 F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c
 F_SRC			=	main.c $(AUX) $(VALIDATION)

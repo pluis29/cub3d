@@ -6,45 +6,42 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:55:42 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 13:15:26 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:29:29 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 #include "libft.h"
 
-static void		rgb_separate_ptr(t_mode *mode, char ***color, int i, int x);
 static void		rgb_validation_setup_colors_struct(t_mode *mode);
+static void		rgb_separate_ptr(t_mode *mode, int i, int x);
 static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag);
 
 void	find_rgb(t_mode *mode, int i)
 {
-	char	***color;
-
-	color = ft_calloc(3, sizeof(char **));
+	mode->temp_rgb = ft_calloc(3, sizeof(char **));
 	while (i < mode->map_start_in)
 	{
-		if (skip_space_cmp(mode->map_file[i], "F ", 2) == 0 && mode->rgb_f == 0)
+		if (ft_memcmp(mode->map_file[i], "F ", 2) == 0 && mode->rgb_f == 0)
 		{
 			look_for_duplicate(mode, "F ", i + 1);
-			color[0] = ft_split(mode->map_file[i++], ' ');
+			valid_comma(mode, ft_strtrim(mode->map_file[i], "F"));
+			mode->temp_rgb[0] = ft_split(mode->map_file[i++], ' ');
 			mode->rgb_f = 1;
 		}
 		if (ft_memcmp(mode->map_file[i], "C ", 2) == 0 && mode->rgb_c == 0)
 		{
 			look_for_duplicate(mode, "C ", i + 1);
-			color[1] = ft_split(mode->map_file[i++], ' ');
+			valid_comma(mode, ft_strtrim(mode->map_file[i], "C"));
+			mode->temp_rgb[1] = ft_split(mode->map_file[i++], ' ');
 			mode->rgb_c = 1;
 		}
 		else
 			i++;
 	}
 	if (mode->rgb_c == 0 || mode->rgb_f == 0)
-	{
-		ft_free_triple_ptr(color);
 		close_all(mode, RGB_NOT_SPECIFIED);
-	}
-	rgb_separate_ptr(mode, color, 0, 1);
+	rgb_separate_ptr(mode, 0, 1);
 	rgb_validation_setup_colors_struct(mode);
 }
 
@@ -53,18 +50,18 @@ void	find_rgb(t_mode *mode, int i)
  * @brief remove comma from string and transform it into a double pointer for
  * easy access and movement.
 */
-static void	rgb_separate_ptr(t_mode *mode, char ***color, int i, int x)
+static void	rgb_separate_ptr(t_mode *mode, int i, int x)
 {
 	char	***temp;
 	int		d;
 
 	temp = (char ***)ft_calloc(9, sizeof(char **));
 	d = 0;
-	while (color[i] != NULL)
+	while (mode->temp_rgb[i] != NULL)
 	{
 		x = 0;
-		while (color[i][x] != NULL)
-			temp[d++] = ft_split(color[i][x++], ',');
+		while (mode->temp_rgb[i][x] != NULL)
+			temp[d++] = ft_split(mode->temp_rgb[i][x++], ',');
 		i++;
 	}
 	x = 0;
@@ -79,7 +76,6 @@ static void	rgb_separate_ptr(t_mode *mode, char ***color, int i, int x)
 		d++;
 	}
 	ft_free_triple_ptr(temp);
-	ft_free_triple_ptr(color);
 }
 
 static void	rgb_validation_setup_colors_struct(t_mode *mode)
