@@ -60,7 +60,7 @@ static int	check_possibility_space(t_mode *mode, char c)
 	int	tag_return;
 
 	tag_return = false;
-	if (c == '1' || c == ' ' || c == 0 || c == '\0')
+	if (c == '1' || c == ' ')
 		tag_return = true;
 	return (tag_return);
 }
