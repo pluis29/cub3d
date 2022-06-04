@@ -32,6 +32,7 @@ void	find_rgb(t_mode *mode, int i)
 		}
 		if (ft_memcmp(mode->map_file[i], "C ", 2) == 0 && mode->rgb_c == 0)
 		{
+			look_for_duplicate(mode, "C ", i + 1);
 			color[1] = ft_split(mode->map_file[i++], ' ');
 			mode->rgb_c = 1;
 		}
@@ -69,7 +70,7 @@ static void	rgb_separate_ptr(t_mode *mode, char ***color, int i, int x)
 	x = 0;
 	d = 0;
 	i = 0;
-	mode->temp_color = (char **)ft_calloc(9, sizeof(char *));
+	mode->temp_color = (char **)ft_calloc(12, sizeof(char *));
 	while (temp[d] != NULL)
 	{
 		x = 0;
@@ -94,6 +95,8 @@ static void	rgb_validation_setup_colors_struct(t_mode *mode)
 			close_all(mode, WRONG_RGB);
 		i++;
 	}
+	if (i != 8)
+		close_all(mode, WRONG_RGB);
 	mode->floor_rgb = rgb_setup_to_struct(mode, 1);
 	mode->cell_rgb = rgb_setup_to_struct(mode, 2);
 }

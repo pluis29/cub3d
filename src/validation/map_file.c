@@ -23,6 +23,11 @@ void	map_file_redirect(t_mode *mode, char *path)
 		close_all(mode, WRONG_CUB_TYPE_FILE);
 
 	path_existance(mode, path);
+	if (mode->map_file[mode->map_start_in + 1] ==  NULL)
+	{
+		printf("teste\n");
+		close_all(mode, "teste tbm");
+	}
 	look_for_trash(mode);
 	find_texture(mode, 0);
 	find_rgb(mode, 0);
@@ -68,7 +73,7 @@ static void	store_map_file(t_mode *mode, int lines, char *path)
 
 static void	get_start_end_from_map(t_mode *mode, int file_lines)
 {
-	while (mode->map_file[mode->map_start_in] != NULL)
+	while (mode->map_file[mode->map_start_in + 1] != NULL)
 	{
 		if (mode->map_file[mode->map_start_in][0] == '1')
 			break;

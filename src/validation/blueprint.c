@@ -68,7 +68,7 @@ static void	map_valid_left_right_column(t_mode *mode)
 				close_all(mode, INVALID_MAP);
 		}
 		else
-			close_all(mode, INVALID_MAP);
+				close_all(mode, INVALID_MAP);
 	}
 }
 
@@ -93,6 +93,8 @@ static void	map_valid_letter(t_mode *mode)
 					mode->found_letter = 1;
 		}
 	}
+	if (mode->found_letter == 0)
+		close_all(mode, NOT_FOUND_PLAYER);
 }
 
 static void	map_valid_middle(t_mode *mode)
@@ -108,12 +110,17 @@ static void	map_valid_middle(t_mode *mode)
 		x = 0;
 		while (mode->map_file[cpy_start][++x] != '\0' && x < (len - 1))
 		{
-			/* printf("%c ", mode->map_file[cpy_start][x]); */
-			if (mode->map_file[cpy_start][x] == '0')
-				check_square_zero(mode, cpy_start, x);
+			//printf("%c ", mode->map_file[cpy_start][x]);
+			if (mode->map_file[cpy_start][x] == '1')
+				continue ;
 			if (mode->map_file[cpy_start][x] == ' ')
 				check_square_space(mode, cpy_start, x);
+			if (mode->map_file[cpy_start][x] == '0')
+				check_square_zero(mode, cpy_start, x);
+			else
+				check_square_zero(mode, cpy_start, x);
+			
 		}
-		/* printf("\n"); */
+		//printf("\n");
 	}
 }

@@ -33,5 +33,6 @@
 # define WRONG_RGB "Wrong usage of RGB. (0 >= & <=255)"
 /* blueprint */
 # define INVALID_MAP "Invalid Map/Blueprint"
+# define NOT_FOUND_PLAYER "Player not found"
 
 #endif
