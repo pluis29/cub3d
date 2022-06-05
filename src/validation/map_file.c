@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:49:20 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 19:23:25 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 00:25:04 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,12 @@ void	map_file_redirect(t_mode *mode, char *path)
 
 	path_existance(mode, path);
 	if (mode->map_file[mode->map_start_in + 1] ==  NULL)
-	{
-		printf("teste\n");
-		close_all(mode, "teste tbm");
-	}
+		close_all(mode, INVALID_MAP);
 	look_for_trash(mode);
 	find_texture(mode, 0);
 	find_rgb(mode, 0);
-	check_blueprint(mode);
 	check_end_of_file(mode);
+	check_blueprint(mode);
 }
 
 static void	path_existance(t_mode *mode, char *path)
@@ -84,8 +81,6 @@ static void	get_start_end_from_map(t_mode *mode, int file_lines)
 					 == true)
 				break ;
 		mode->map_start_in++;
-		if (mode->map_file[mode->map_start_in][0] == 0)
-			continue ;
 	}
 	while (file_lines >= 0)
 	{

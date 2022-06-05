@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:07:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 18:19:20 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 00:41:52 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	check_blueprint(t_mode *mode)
 	map_valid_left_right_column(mode);
 	map_valid_letter(mode);
 	map_valid_middle(mode);
+	set_blueprint(mode);
 }
 
 static void	map_valid_bottom_and_top_row(t_mode *mode)
@@ -110,17 +111,17 @@ static void	map_valid_middle(t_mode *mode)
 		x = 0;
 		while (mode->map_file[cpy_start][++x] != '\0' && x < (len - 1))
 		{
-			//printf("%c ", mode->map_file[cpy_start][x]);
+			printf("%c", mode->map_file[cpy_start][x]);
 			if (mode->map_file[cpy_start][x] == '1')
 				continue ;
-			if (mode->map_file[cpy_start][x] == ' ')
+			else if (mode->map_file[cpy_start][x] == ' ')
 				check_square_space(mode, cpy_start, x);
-			if (mode->map_file[cpy_start][x] == '0')
+			else if (mode->map_file[cpy_start][x] == '0')
 				check_square_zero(mode, cpy_start, x);
 			else
 				check_square_zero(mode, cpy_start, x);
-			
+
 		}
-		//printf("\n");
+		printf("\n");
 	}
 }

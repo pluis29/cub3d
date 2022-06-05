@@ -6,12 +6,11 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:55:42 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 19:29:29 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/04 23:42:48 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "libft.h"
 
 static void		rgb_validation_setup_colors_struct(t_mode *mode);
 static void		rgb_separate_ptr(t_mode *mode, int i, int x);
@@ -22,17 +21,17 @@ void	find_rgb(t_mode *mode, int i)
 	mode->temp_rgb = ft_calloc(3, sizeof(char **));
 	while (i < mode->map_start_in)
 	{
-		if (ft_memcmp(mode->map_file[i], "F ", 2) == 0 && mode->rgb_f == 0)
+		if (skip_space_cmp(mode->map_file[i], "F ", 2) == 0 && mode->rgb_f == 0)
 		{
 			look_for_duplicate(mode, "F ", i + 1);
-			valid_comma(mode, ft_strtrim(mode->map_file[i], "F"));
+			valid_comma(mode, ft_strtrim(mode->map_file[i], "F"), 0, -1);
 			mode->temp_rgb[0] = ft_split(mode->map_file[i++], ' ');
 			mode->rgb_f = 1;
 		}
-		if (ft_memcmp(mode->map_file[i], "C ", 2) == 0 && mode->rgb_c == 0)
+		if (skip_space_cmp(mode->map_file[i], "C ", 2) == 0 && mode->rgb_c == 0)
 		{
 			look_for_duplicate(mode, "C ", i + 1);
-			valid_comma(mode, ft_strtrim(mode->map_file[i], "C"));
+			valid_comma(mode, ft_strtrim(mode->map_file[i], "C"), 0, -1);
 			mode->temp_rgb[1] = ft_split(mode->map_file[i++], ' ');
 			mode->rgb_c = 1;
 		}

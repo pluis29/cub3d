@@ -21,13 +21,13 @@ void	find_texture(t_mode *mode, int i)
 	mode->temp_texture = (char ***)ft_calloc(5, sizeof(char **));
 	while (i < mode->map_start_in)
 	{
-		if (ft_memcmp(mode->map_file[i], "NO ", 3) == 0 && mode->no == 0)
+		if (skip_space_cmp(mode->map_file[i], "NO ", 3) == 0 && mode->no == 0)
 		{
 			look_for_duplicate(mode, "NO ", i + 1);
 			mode->temp_texture[0] = ft_split(mode->map_file[i], ' ');
 			mode->no = 1;
 		}
-		if (ft_memcmp(mode->map_file[i], "SO ", 3) == 0 && mode->so == 0)
+		if (skip_space_cmp(mode->map_file[i], "SO ", 3) == 0 && mode->so == 0)
 		{
 			look_for_duplicate(mode, "SO ", i + 1);
 			mode->temp_texture[1] = ft_split(mode->map_file[i], ' ');
@@ -42,13 +42,13 @@ static void	find_texture_cont(t_mode *mode, int i)
 {
 	while (i < mode->map_start_in)
 	{
-		if (ft_memcmp(mode->map_file[i], "WE ", 3) == 0)
+		if (skip_space_cmp(mode->map_file[i], "WE ", 3) == 0)
 		{
 			look_for_duplicate(mode, "WE ", i + 1);
 			mode->temp_texture[2] = ft_split(mode->map_file[i], ' ');
 			mode->we = 1;
 		}
-		if (ft_memcmp(mode->map_file[i], "EA ", 3) == 0)
+		if (skip_space_cmp(mode->map_file[i], "EA ", 3) == 0)
 		{
 			look_for_duplicate(mode, "EA ", i + 1);
 			mode->temp_texture[3] = ft_split(mode->map_file[i], ' ');

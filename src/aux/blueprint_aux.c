@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:16:56 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 18:18:31 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 00:22:38 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 static int	check_possibility_space(t_mode *mode, char c);
 static int	check_possibility_zero(t_mode *mode, char c);
+
+void	set_blueprint(t_mode *mode)
+{
+	int	i;
+
+	i = 0;
+	mode->blueprint = (char **)ft_calloc(mode->map_end_in - mode->map_start_in + 2, sizeof(char *));
+	while(mode->map_start_in <= mode->map_end_in)
+	{
+		mode->blueprint[i] = ft_strdup(mode->map_file[mode->map_start_in]);
+		i++;
+		mode->map_start_in++;
+	}
+}
 
 void	check_square_space(t_mode *mode, int posi, int x)
 {
@@ -60,7 +74,7 @@ static int	check_possibility_space(t_mode *mode, char c)
 	int	tag_return;
 
 	tag_return = false;
-	if (c == '1' || c == ' ')
+	if (c == '1' || c == ' ' || c == 0)
 		tag_return = true;
 	return (tag_return);
 }

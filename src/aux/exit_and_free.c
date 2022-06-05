@@ -6,19 +6,18 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:45:04 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 19:30:09 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 01:05:18 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
-#include "libft.h"
 
 void	close_all(t_mode *mode, char *reason)
 {
 	free_struct(mode);
 	printf("Error\n");
 	/* printf("%sError%s\n%s -- %sRead the PDF or Documentation%s\n", BRED, RESET */
-		/* , reason, BGRN, RESET); */
+	/* 	, reason, BGRN, RESET); */
 	exit(EXIT_FAILURE);
 }
 
@@ -38,4 +37,6 @@ void	free_struct(t_mode *mode)
 		ft_free_double_ptr(mode->temp_color);
 	if (mode->temp_rgb != NULL)
 		ft_free_triple_ptr(mode->temp_rgb);
+	if (mode->blueprint != NULL)
+		ft_free_double_ptr(mode->blueprint);
 }

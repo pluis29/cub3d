@@ -43,7 +43,7 @@ EMPTY_CUB_FILE	include/defines.h	25;"	d
 EMPTY_TEXTURE	include/defines.h	30;"	d
 END_WITH_INVALID	include/defines.h	21;"	d
 FT	Makefile	/^FT				=	ft$/;"	m
-F_AUX	Makefile	/^F_AUX			=	exit_and_free.c map_file_aux.c blueprint_aux.c$/;"	m
+F_AUX	Makefile	/^F_AUX			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c$/;"	m
 F_MANDATORY	include/libft/Makefile	/^F_MANDATORY	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \\$/;"	m
 F_SRC	Makefile	/^F_SRC			=	main.c $(AUX) $(VALIDATION)$/;"	m
 F_VALIDATION	Makefile	/^F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c$/;"	m
@@ -70,6 +70,7 @@ MAGHB	include/ansi_color.h	62;"	d
 MANDATORY	include/libft/Makefile	/^MANDATORY	=	$(addprefix $(P_MANDATORY), $(F_MANDATORY))$/;"	m
 NAME	Makefile	/^NAME			=	cub3D$/;"	m
 NAME	include/libft/Makefile	/^NAME		=	libft.a$/;"	m
+NOT_FOUND_PLAYER	include/defines.h	36;"	d
 OBJ	Makefile	/^OBJ				=	$(addprefix $(P_OBJ), $(F_SRC:.c=.o))$/;"	m
 OBJ	include/libft/Makefile	/^OBJ			=	$(addprefix $(P_OBJ), $(SRC:.c=.o))$/;"	m
 P_AUX	Makefile	/^P_AUX			=	aux\/$/;"	m
@@ -114,6 +115,7 @@ YEL	include/ansi_color.h	20;"	d
 YELB	include/ansi_color.h	50;"	d
 YELHB	include/ansi_color.h	60;"	d
 blue	include/struct.h	/^	int	blue;$/;"	m	struct:s_rgb
+blueprint	include/struct.h	/^	char		**blueprint;$/;"	m	struct:s_mode
 buf	include/libft/libft.h	/^	char		*buf;$/;"	m	struct:s_variable
 cell_rgb	include/struct.h	/^	t_rgb		cell_rgb;$/;"	m	struct:s_mode
 check_blueprint	src/validation/blueprint.c	/^void	check_blueprint(t_mode *mode)$/;"	f
@@ -203,13 +205,14 @@ path_existance	src/validation/map_file.c	/^static void	path_existance(t_mode *mo
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_c	include/struct.h	/^	int			rgb_c;$/;"	m	struct:s_mode
 rgb_f	include/struct.h	/^	int			rgb_f;$/;"	m	struct:s_mode
-rgb_separate_ptr	src/validation/rgb.c	/^static void	rgb_separate_ptr(t_mode *mode, char ***color, int i, int x)$/;"	f	file:
+rgb_separate_ptr	src/validation/rgb.c	/^static void	rgb_separate_ptr(t_mode *mode, int i, int x)$/;"	f	file:
 rgb_setup_to_struct	src/validation/rgb.c	/^static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag)$/;"	f	file:
 rgb_validation_setup_colors_struct	src/validation/rgb.c	/^static void	rgb_validation_setup_colors_struct(t_mode *mode)$/;"	f	file:
 s_mode	include/struct.h	/^typedef struct s_mode$/;"	s
 s_rgb	include/struct.h	/^typedef struct s_rgb$/;"	s
 s_texture	include/struct.h	/^typedef struct s_texture$/;"	s
 s_variable	include/libft/libft.h	/^typedef struct s_variable$/;"	s
+set_blueprint	src/aux/blueprint_aux.c	/^void	set_blueprint(t_mode *mode)$/;"	f
 skip_space_cmp	src/aux/map_file_aux.c	/^int	skip_space_cmp(const void *s1, const void *s2, size_t n)$/;"	f
 so	include/struct.h	/^	char	*so;$/;"	m	struct:s_texture
 so	include/struct.h	/^	int			so;$/;"	m	struct:s_mode
@@ -220,11 +223,14 @@ t_rgb	include/struct.h	/^}	t_rgb;$/;"	t	typeref:struct:s_rgb
 t_texture	include/struct.h	/^}	t_texture;$/;"	t	typeref:struct:s_texture
 t_variable	include/libft/libft.h	/^}	t_variable;$/;"	t	typeref:struct:s_variable
 temp_color	include/struct.h	/^	char		**temp_color;$/;"	m	struct:s_mode
+temp_rgb	include/struct.h	/^	char		***temp_rgb;$/;"	m	struct:s_mode
 temp_texture	include/struct.h	/^	char		***temp_texture;$/;"	m	struct:s_mode
 texture	include/struct.h	/^	t_texture	texture;$/;"	m	struct:s_mode
 texture_extension	src/validation/texture.c	/^static void	texture_extension(t_mode *mode)$/;"	f	file:
 texture_valid_path_and_empty	src/validation/texture.c	/^static void	texture_valid_path_and_empty(t_mode *mode)$/;"	f	file:
 tmp	include/libft/libft.h	/^	char		*tmp;$/;"	m	struct:s_variable
 true	include/struct.h	/^	true$/;"	e	enum:e_bool
+valid_comma	src/aux/rgb_aux.c	/^void	valid_comma(t_mode *mode, char *str, int comma, int i)$/;"	f
+valid_comma_end	src/aux/rgb_aux.c	/^static void	valid_comma_end(t_mode *mode, char *str)$/;"	f	file:
 we	include/struct.h	/^	char	*we;$/;"	m	struct:s_texture
 we	include/struct.h	/^	int			we;$/;"	m	struct:s_mode
