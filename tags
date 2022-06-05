@@ -62,6 +62,7 @@ INC	Makefile	/^INC				=	-I $(P_INCLUDE) -I $(P_LIBFT)$/;"	m
 INC	include/libft/Makefile	/^INC			=	-I .$/;"	m
 INVALID_ELEMENT	include/defines.h	19;"	d
 INVALID_MAP	include/defines.h	35;"	d
+INVALID_PLAYER	include/defines.h	37;"	d
 LIBFT	Makefile	/^LIBFT			=	-L $(P_LIBFT) -l $(FT)$/;"	m
 LIBFT_H	include/libft/libft.h	14;"	d
 MAG	include/ansi_color.h	22;"	d
@@ -120,10 +121,10 @@ buf	include/libft/libft.h	/^	char		*buf;$/;"	m	struct:s_variable
 cell_rgb	include/struct.h	/^	t_rgb		cell_rgb;$/;"	m	struct:s_mode
 check_blueprint	src/validation/blueprint.c	/^void	check_blueprint(t_mode *mode)$/;"	f
 check_end_of_file	src/aux/map_file_aux.c	/^void	check_end_of_file(t_mode *mode)$/;"	f
-check_possibility_space	src/aux/blueprint_aux.c	/^static int	check_possibility_space(t_mode *mode, char c)$/;"	f	file:
+check_possibility_space	src/aux/blueprint_aux.c	/^static int	check_possibility_space(t_mode *mode, char c, int t_len, int a_len)$/;"	f	file:
 check_possibility_zero	src/aux/blueprint_aux.c	/^static int	check_possibility_zero(t_mode *mode, char c)$/;"	f	file:
 check_spaced_line	src/validation/map_file.c	/^static int	check_spaced_line(char *str_line, int tag)$/;"	f	file:
-check_square_space	src/aux/blueprint_aux.c	/^void	check_square_space(t_mode *mode, int posi, int x)$/;"	f
+check_square_space	src/aux/blueprint_aux.c	/^void	check_square_space(t_mode *mode, int p, int x)$/;"	f
 check_square_zero	src/aux/blueprint_aux.c	/^void	check_square_zero(t_mode *mode, int posi, int x)$/;"	f
 check_veracity	src/aux/map_file_aux.c	/^static int	check_veracity(char *s, int posi)$/;"	f	file:
 close_all	src/aux/exit_and_free.c	/^void	close_all(t_mode *mode, char *reason)$/;"	f
