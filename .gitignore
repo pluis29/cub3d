@@ -4,3 +4,5 @@ obj/
 include/libft/libft.a
 cub3D
 .vscode/
+cub3d_destroyer/
+valgrind*

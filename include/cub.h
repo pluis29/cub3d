@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 23:43:20 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:55:46 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	find_rgb(t_mode *mode, int i);
 void	find_texture(t_mode *mode, int i);
 
 /* map file*/
+void	check_square_space(t_mode *mode, int posi, int x);
 void	map_file_redirect(t_mode *mode, char *path);
 
 /* blueprint */
-void	check_square_space(t_mode *mode, int posi, int x);
 void	check_square_zero(t_mode *mode, int posi, int x);
 void	check_blueprint(t_mode *mode);
 

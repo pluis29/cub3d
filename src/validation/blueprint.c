@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:07:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/05 00:41:52 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/05 16:30:01 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	map_valid_letter(t_mode *mode)
 			c = mode->map_file[cpy_start][x];
 			if (mode->found_letter == 1)
 				if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
-					close_all(mode, &c);
+					close_all(mode, INVALID_PLAYER);
 			if (mode->found_letter == 0)
 				if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
 					mode->found_letter = 1;
@@ -111,17 +111,17 @@ static void	map_valid_middle(t_mode *mode)
 		x = 0;
 		while (mode->map_file[cpy_start][++x] != '\0' && x < (len - 1))
 		{
-			printf("%c", mode->map_file[cpy_start][x]);
-			if (mode->map_file[cpy_start][x] == '1')
+			/* printf("%c", mode->map_file[cpy_start][x]); */
+			if (mode->map_file[cpy_start][x] == '1' || mode->map_file[cpy_start][x] == ' ')
 				continue ;
-			else if (mode->map_file[cpy_start][x] == ' ')
-				check_square_space(mode, cpy_start, x);
+			/* else if (mode->map_file[cpy_start][x] == ' ') */
+			/* 	check_square_space(mode, cpy_start, x); */
 			else if (mode->map_file[cpy_start][x] == '0')
 				check_square_zero(mode, cpy_start, x);
 			else
 				check_square_zero(mode, cpy_start, x);
 
 		}
-		printf("\n");
+		/* printf("\n"); */
 	}
 }

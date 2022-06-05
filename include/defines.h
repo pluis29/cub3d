@@ -34,5 +34,6 @@
 /* blueprint */
 # define INVALID_MAP "Invalid Map/Blueprint"
 # define NOT_FOUND_PLAYER "Player not found"
+# define INVALID_PLAYER "Cant have more than one player"
 
 #endif
