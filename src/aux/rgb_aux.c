@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 19:18:12 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 23:44:05 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:02:46 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,14 @@ static void	valid_comma_end(t_mode *mode, char *str)
 		i--;
 	}
 	ft_free_null(&str);
+}
+
+int	rgb_aux_separate_ptr(char *str)
+{
+	if (ft_strlen(str) == 1)
+	{
+		if (str[0] == ',' || str[0] == 'F' || str[0] == 'C')
+			return (true);
+	}
+	return (false);
 }

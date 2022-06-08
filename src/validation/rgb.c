@@ -6,14 +6,15 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:55:42 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 23:42:48 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:03:43 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
+static void		rgb_separate_ptr(t_mode *mode, int i, int x, int d);
+static void		rgb_separate_ptr_cont(t_mode *mode, char ***temp);
 static void		rgb_validation_setup_colors_struct(t_mode *mode);
-static void		rgb_separate_ptr(t_mode *mode, int i, int x);
 static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag);
 
 void	find_rgb(t_mode *mode, int i)
@@ -40,7 +41,7 @@ void	find_rgb(t_mode *mode, int i)
 	}
 	if (mode->rgb_c == 0 || mode->rgb_f == 0)
 		close_all(mode, RGB_NOT_SPECIFIED);
-	rgb_separate_ptr(mode, 0, 1);
+	rgb_separate_ptr(mode, -1, 1, 0);
 	rgb_validation_setup_colors_struct(mode);
 }
 
@@ -49,49 +50,62 @@ void	find_rgb(t_mode *mode, int i)
  * @brief remove comma from string and transform it into a double pointer for
  * easy access and movement.
 */
-static void	rgb_separate_ptr(t_mode *mode, int i, int x)
+static void	rgb_separate_ptr(t_mode *mode, int i, int x, int d)
 {
 	char	***temp;
-	int		d;
 
 	temp = (char ***)ft_calloc(9, sizeof(char **));
-	d = 0;
-	while (mode->temp_rgb[i] != NULL)
+	while (mode->temp_rgb[++i] != NULL)
 	{
-		x = 0;
-		while (mode->temp_rgb[i][x] != NULL)
-			temp[d++] = ft_split(mode->temp_rgb[i][x++], ',');
-		i++;
+		x = -1;
+		while (mode->temp_rgb[i][++x] != NULL)
+		{
+			if (rgb_aux_separate_ptr(mode->temp_rgb[i][x]) == true)
+					continue ;
+			else
+				temp[d++] = ft_split(mode->temp_rgb[i][x], ',');
+		}
 	}
-	x = 0;
-	d = 0;
+	rgb_separate_ptr_cont(mode,temp);
+	ft_free_triple_ptr(temp);
+}
+
+static void	rgb_separate_ptr_cont(t_mode *mode, char ***temp)
+{
+	int	d;
+	int	i;
+	int	x;
+
+	d = -1;
 	i = 0;
-	mode->temp_color = (char **)ft_calloc(12, sizeof(char *));
-	while (temp[d] != NULL)
+	mode->temp_color = (char **)ft_calloc(7, sizeof(char *));
+	while (temp[++d] != NULL)
 	{
 		x = 0;
 		while (temp[d][x] != NULL)
+		{
+			if (i > 5)
+			{
+				ft_free_triple_ptr(temp);
+				close_all(mode, WRONG_RGB);
+			}
 			mode->temp_color[i++] = ft_strdup(temp[d][x++]);
-		d++;
+
+		}
 	}
-	ft_free_triple_ptr(temp);
 }
 
 static void	rgb_validation_setup_colors_struct(t_mode *mode)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (mode->temp_color[i] != NULL)
 	{
-		if (i == 4)
-			i = 5;
 		if (ft_check_is_number(mode->temp_color[i]) == 0)
 			close_all(mode, WRONG_RGB);
 		i++;
 	}
-	if (i != 8)
-		close_all(mode, WRONG_RGB);
 	mode->floor_rgb = rgb_setup_to_struct(mode, 1);
 	mode->cell_rgb = rgb_setup_to_struct(mode, 2);
 }
@@ -106,15 +120,15 @@ static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag)
 
 	if (tag == 1)
 	{
-		temp_color.red = ft_atoi(mode->temp_color[1]);
-		temp_color.green = ft_atoi(mode->temp_color[2]);
-		temp_color.blue = ft_atoi(mode->temp_color[3]);
+		temp_color.red = ft_atoi(mode->temp_color[0]);
+		temp_color.green = ft_atoi(mode->temp_color[1]);
+		temp_color.blue = ft_atoi(mode->temp_color[2]);
 	}
 	else
 	{
-		temp_color.red = ft_atoi(mode->temp_color[5]);
-		temp_color.green = ft_atoi(mode->temp_color[6]);
-		temp_color.blue = ft_atoi(mode->temp_color[7]);
+		temp_color.red = ft_atoi(mode->temp_color[3]);
+		temp_color.green = ft_atoi(mode->temp_color[4]);
+		temp_color.blue = ft_atoi(mode->temp_color[5]);
 	}
 	if (temp_color.red < 0 || temp_color.green < 0 || temp_color.blue < 0
 		|| temp_color.red > 255 || temp_color.green > 255

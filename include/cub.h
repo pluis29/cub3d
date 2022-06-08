@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/05 14:55:46 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:01:55 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		skip_space_cmp(const void *s1, const void *s2, size_t n);
 void	look_for_duplicate(t_mode *mode, char *target, int i);
 void	check_end_of_file(t_mode *mode);
 void	look_for_trash(t_mode *mode);
+int		rgb_aux_separate_ptr(char *str);
 
 /* aux free */
 void	close_all(t_mode *mode, char *reason);
