@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/08 19:01:55 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/09 00:17:05 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	set_blueprint(t_mode *mode);
 
 /* rgb */
 void	valid_comma(t_mode *mode, char *str, int comma, int i);
+int		rgb_aux_separate_ptr(char *str);
 void	find_rgb(t_mode *mode, int i);
+void	rgb_exists(t_mode *m);
 
 /* texture */
 void	find_texture(t_mode *mode, int i);
@@ -47,7 +49,6 @@ int		skip_space_cmp(const void *s1, const void *s2, size_t n);
 void	look_for_duplicate(t_mode *mode, char *target, int i);
 void	check_end_of_file(t_mode *mode);
 void	look_for_trash(t_mode *mode);
-int		rgb_aux_separate_ptr(char *str);
 
 /* aux free */
 void	close_all(t_mode *mode, char *reason);

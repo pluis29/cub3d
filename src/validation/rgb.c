@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:55:42 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/08 19:03:43 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/09 00:05:32 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,17 @@ static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag);
 
 void	find_rgb(t_mode *mode, int i)
 {
+	rgb_exists(mode);
 	mode->temp_rgb = ft_calloc(3, sizeof(char **));
 	while (i < mode->map_start_in)
 	{
-		if (skip_space_cmp(mode->map_file[i], "F ", 2) == 0 && mode->rgb_f == 0)
-		{
-			look_for_duplicate(mode, "F ", i + 1);
-			valid_comma(mode, ft_strtrim(mode->map_file[i], "F"), 0, -1);
+		if (skip_space_cmp(mode->map_file[i], "F ", 2) == 0)
 			mode->temp_rgb[0] = ft_split(mode->map_file[i++], ' ');
-			mode->rgb_f = 1;
-		}
-		if (skip_space_cmp(mode->map_file[i], "C ", 2) == 0 && mode->rgb_c == 0)
-		{
-			look_for_duplicate(mode, "C ", i + 1);
-			valid_comma(mode, ft_strtrim(mode->map_file[i], "C"), 0, -1);
+		if (skip_space_cmp(mode->map_file[i], "C ", 2) == 0)
 			mode->temp_rgb[1] = ft_split(mode->map_file[i++], ' ');
-			mode->rgb_c = 1;
-		}
 		else
 			i++;
 	}
-	if (mode->rgb_c == 0 || mode->rgb_f == 0)
-		close_all(mode, RGB_NOT_SPECIFIED);
 	rgb_separate_ptr(mode, -1, 1, 0);
 	rgb_validation_setup_colors_struct(mode);
 }

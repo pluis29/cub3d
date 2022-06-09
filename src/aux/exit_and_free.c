@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:45:04 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/05 16:29:46 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/08 23:49:45 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	close_all(t_mode *mode, char *reason)
 {
 	free_struct(mode);
-	printf("Error\n");
-	/* printf("%sError%s\n%s -- %sRead the PDF or Documentation%s\n", BRED, RESET */
-	/* 	, reason, BGRN, RESET); */
+	/* printf("Error\n"); */
+	printf("%sError%s\n%s -- %sRead the PDF or Documentation%s\n", BRED, RESET
+		, reason, BGRN, RESET);
 	exit(EXIT_FAILURE);
 }
 

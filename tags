@@ -135,7 +135,6 @@ false	include/struct.h	/^	false,$/;"	e	enum:e_bool
 file_lines	include/struct.h	/^	int			file_lines;$/;"	m	struct:s_mode
 find_rgb	src/validation/rgb.c	/^void	find_rgb(t_mode *mode, int i)$/;"	f
 find_texture	src/validation/texture.c	/^void	find_texture(t_mode *mode, int i)$/;"	f
-find_texture_cont	src/validation/texture.c	/^static void	find_texture_cont(t_mode *mode, int i)$/;"	f	file:
 floor_rgb	include/struct.h	/^	t_rgb		floor_rgb;$/;"	m	struct:s_mode
 found_letter	include/struct.h	/^	int			found_letter;$/;"	m	struct:s_mode
 free_struct	src/aux/exit_and_free.c	/^void	free_struct(t_mode *mode)$/;"	f
@@ -187,6 +186,7 @@ ft_toupper	include/libft/mandatory/ft_toupper.c	/^int	ft_toupper(int c)$/;"	f
 ft_transfer	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_transfer(char **plus, char **line)$/;"	f	file:
 get_start_end_from_map	src/validation/map_file.c	/^static void	get_start_end_from_map(t_mode *mode, int file_lines)$/;"	f	file:
 green	include/struct.h	/^	int	green;$/;"	m	struct:s_rgb
+ht	include/struct.h	/^	int			ht;$/;"	m	struct:s_mode
 index	include/libft/libft.h	/^	ssize_t		index;$/;"	m	struct:s_variable
 just_close	src/aux/exit_and_free.c	/^void	just_close(t_mode *mode)$/;"	f
 look_for_duplicate	src/aux/map_file_aux.c	/^void	look_for_duplicate(t_mode *mode, char *target, int i)$/;"	f
@@ -204,9 +204,12 @@ no	include/struct.h	/^	char	*no;$/;"	m	struct:s_texture
 no	include/struct.h	/^	int			no;$/;"	m	struct:s_mode
 path_existance	src/validation/map_file.c	/^static void	path_existance(t_mode *mode, char *path)$/;"	f	file:
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
+rgb_aux_separate_ptr	src/aux/rgb_aux.c	/^int	rgb_aux_separate_ptr(char *str)$/;"	f
 rgb_c	include/struct.h	/^	int			rgb_c;$/;"	m	struct:s_mode
+rgb_exists	src/aux/rgb_aux.c	/^void	rgb_exists(t_mode *m)$/;"	f
 rgb_f	include/struct.h	/^	int			rgb_f;$/;"	m	struct:s_mode
-rgb_separate_ptr	src/validation/rgb.c	/^static void	rgb_separate_ptr(t_mode *mode, int i, int x)$/;"	f	file:
+rgb_separate_ptr	src/validation/rgb.c	/^static void	rgb_separate_ptr(t_mode *mode, int i, int x, int d)$/;"	f	file:
+rgb_separate_ptr_cont	src/validation/rgb.c	/^static void	rgb_separate_ptr_cont(t_mode *mode, char ***temp)$/;"	f	file:
 rgb_setup_to_struct	src/validation/rgb.c	/^static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag)$/;"	f	file:
 rgb_validation_setup_colors_struct	src/validation/rgb.c	/^static void	rgb_validation_setup_colors_struct(t_mode *mode)$/;"	f	file:
 s_mode	include/struct.h	/^typedef struct s_mode$/;"	s
@@ -227,6 +230,7 @@ temp_color	include/struct.h	/^	char		**temp_color;$/;"	m	struct:s_mode
 temp_rgb	include/struct.h	/^	char		***temp_rgb;$/;"	m	struct:s_mode
 temp_texture	include/struct.h	/^	char		***temp_texture;$/;"	m	struct:s_mode
 texture	include/struct.h	/^	t_texture	texture;$/;"	m	struct:s_mode
+texture_exists	src/aux/texture_aux.c	/^void	texture_exists(t_mode *m, int i)$/;"	f
 texture_extension	src/validation/texture.c	/^static void	texture_extension(t_mode *mode)$/;"	f	file:
 texture_valid_path_and_empty	src/validation/texture.c	/^static void	texture_valid_path_and_empty(t_mode *mode)$/;"	f	file:
 tmp	include/libft/libft.h	/^	char		*tmp;$/;"	m	struct:s_variable

@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 19:18:12 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/08 19:02:46 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/09 00:13:55 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,29 @@ int	rgb_aux_separate_ptr(char *str)
 			return (true);
 	}
 	return (false);
+}
+
+void	rgb_exists(t_mode *m)
+{
+	int	i;
+
+	i = 0;
+	while (i < m->map_start_in)
+	{
+		if (skip_space_cmp(m->map_file[i], "F ", 2) == 0)
+		{
+			valid_comma(m, ft_strtrim(m->map_file[i], "F"), 0, -1);
+			look_for_duplicate(m, "F ", i + 1);
+			m->rgb_f = 1;
+		}
+		if (skip_space_cmp(m->map_file[i], "C ", 2) == 0)
+		{
+			valid_comma(m, ft_strtrim(m->map_file[i], "C"), 0, -1);
+			look_for_duplicate(m, "C ", i + 1);
+			m->rgb_c = 1;
+		}
+		i++;
+	}
+	if (m->rgb_c == 0 || m->rgb_f == 0 || m->ht == 1)
+		close_all(m, RGB_NOT_SPECIFIED);
 }

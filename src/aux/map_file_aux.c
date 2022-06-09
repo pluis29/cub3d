@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:00:26 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/03 18:50:11 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/09 00:13:27 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	look_for_duplicate(t_mode *mode, char *target, int i)
 	while (i < mode->map_start_in)
 	{
 		if (ft_memcmp(mode->map_file[i], target, ft_strlen(target)) == 0)
-			close_all(mode, SAME_ELEMENT);
+			mode->ht = 1;
+			/* close_all(mode, SAME_ELEMENT); */
 		i++;
 	}
 }

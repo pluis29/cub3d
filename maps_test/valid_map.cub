@@ -1,9 +1,10 @@
+
+                                                C                       0,1,255
 NO ./.xpm/no_redbrick.xpm
 SO ./.xpm/so_redbrick.xpm
 EA ./.xpm/ea_redbrick.xpm
 WE ./.xpm/we_redbrick.xpm
-C 9          255,200,200
-F 122,122,122
+F 255,1,0
 
 11111111111111111
 10000000000000001
