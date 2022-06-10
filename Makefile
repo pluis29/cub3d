@@ -6,25 +6,25 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:39:46 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/06/04 19:23:41 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/06/10 01:11:16 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 P_SRC			=	src/
 P_INCLUDE		=	include/
 P_VALIDATION	=	validation/
-P_AUX			=	aux/
+P_AUX_V			=	aux_v/
 P_OBJ			=	./obj/
 
 FT				=	ft
 P_LIBFT			=	$(P_INCLUDE)libft/
 
-F_AUX			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c
+F_AUX_V			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c
 
 F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c
-F_SRC			=	main.c $(AUX) $(VALIDATION)
+F_SRC			=	main.c $(VALIDATION) $(AUX_V)
 
-AUX				=	$(addprefix $(P_AUX), $(F_AUX))
+AUX_V				=	$(addprefix $(P_VALIDATION)$(P_AUX_V), $(F_AUX_V))
 VALIDATION		=	$(addprefix $(P_VALIDATION), $(F_VALIDATION))
 
 OBJ				=	$(addprefix $(P_OBJ), $(F_SRC:.c=.o))
