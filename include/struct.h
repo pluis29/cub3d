@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/09 00:13:23 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/10 22:54:41 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ typedef struct s_mode
 	int			rgb_c;
 	int			found_letter;
 	int			ht;
+
+
+	//teste mlx
+	int			cols;
+	int			rows;
 }	t_mode;
 
 #endif

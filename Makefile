@@ -16,34 +16,39 @@ P_VALIDATION	=	validation/
 P_AUX_V			=	aux_v/
 P_OBJ			=	./obj/
 
-FT				=	ft
 P_LIBFT			=	$(P_INCLUDE)libft/
+P_MLX			=	$(P_INCLUDE)minilibx-linux/
 
 F_AUX_V			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c
 
 F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c
 F_SRC			=	main.c $(VALIDATION) $(AUX_V)
 
-AUX_V				=	$(addprefix $(P_VALIDATION)$(P_AUX_V), $(F_AUX_V))
+AUX_V			=	$(addprefix $(P_VALIDATION)$(P_AUX_V), $(F_AUX_V))
 VALIDATION		=	$(addprefix $(P_VALIDATION), $(F_VALIDATION))
 
 OBJ				=	$(addprefix $(P_OBJ), $(F_SRC:.c=.o))
 
 NAME			=	cub3D
 
-INC				=	-I $(P_INCLUDE) -I $(P_LIBFT)
-LIBFT			=	-L $(P_LIBFT) -l $(FT)
+INC				=	-I $(P_INCLUDE) -I $(P_LIBFT) -I $(P_MLX)
+LIBFT			=	-L $(P_LIBFT) -l ft
+MLX				=	-L $(P_MLX) -lmlx -Ilmlx -lXext -lX11 -lm 
 CFLAGS			=	#-Wall -Wextra -Werror #-fsanitize=address
+MFLAGS			=	
 P_GUARD			=	mkdir -p $(@D)
 RM				=	rm -rf
 CC				=	clang
+
+
 
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
 				@make --no-print-directory -C $(P_LIBFT)
+				@make --no-print-directory -C $(P_MLX)
 				@echo '.o created and moved to obj folder'
-				@$(CC) $(CFLAGS) -g $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+				@$(CC) $(CFLAGS) -O3 -g $(INC) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
 				@echo 'File(cub3d) created'
 
 $(P_OBJ)%.o:	$(P_SRC)%.c
@@ -56,6 +61,7 @@ val:
 clean:
 				@$(RM) $(P_OBJ)
 				@make --no-print-directory -C $(P_LIBFT) clean
+				@make --no-print-directory -C $(P_MLX) clean
 				@echo 'All clean dude'
 
 fclean:			clean

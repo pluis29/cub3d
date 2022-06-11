@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/09 00:17:05 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/10 18:05:24 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "./libft/libft.h"
 # include "ansi_color.h"
 # include "defines.h"
+# include "./minilibx-linux/mlx.h"
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -25,7 +26,6 @@
 int		main(int ac, char **av);
 
 /* em criacao */
-void	set_blueprint(t_mode *mode);
 
 /* rgb */
 void	valid_comma(t_mode *mode, char *str, int comma, int i);
@@ -43,6 +43,7 @@ void	map_file_redirect(t_mode *mode, char *path);
 /* blueprint */
 void	check_square_zero(t_mode *mode, int posi, int x);
 void	check_blueprint(t_mode *mode);
+void	set_blueprint(t_mode *mode);
 
 /* aux */
 int		skip_space_cmp(const void *s1, const void *s2, size_t n);
