@@ -6,13 +6,13 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:24 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/10 23:50:23 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/11 00:37:36 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-static void	read_map(t_mode *mode);
+/* static void	read_map(t_mode *mode); */
 
 int	main(int ac, char **av)
 {
@@ -37,25 +37,25 @@ int	main(int ac, char **av)
 	exit(EXIT_SUCCESS);
 }
 
-static void	read_map(t_mode *mode)
-{
-	int	i=0;
-	int	x=0;
-	int actual_line=0;
-	int line_size=0;
+/* static void	read_map(t_mode *mode) */
+/* { */
+/* 	int	i=0; */
+/* 	int	x=0; */
+/* 	int actual_line=0; */
+/* 	int line_size=0; */
 
-	while (mode->blueprint[i] != NULL)
-	{
-		actual_line = 0;
-		while (mode->blueprint[i][x] != '\0')
-		{
-			actual_line++;
-			x++;
-		}
-		if (actual_line > line_size)
-			line_size = actual_line;
-		i++;
-	}
-	mode->rows = i;
-	mode->cols = line_size;
-}
+/* 	while (mode->blueprint[i] != NULL) */
+/* 	{ */
+/* 		actual_line = 0; */
+/* 		while (mode->blueprint[i][x] != '\0') */
+/* 		{ */
+/* 			actual_line++; */
+/* 			x++; */
+/* 		} */
+/* 		if (actual_line > line_size) */
+/* 			line_size = actual_line; */
+/* 		i++; */
+/* 	} */
+/* 	mode->rows = i; */
+/* 	mode->cols = line_size; */
+/* } */
