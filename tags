@@ -388,7 +388,6 @@ path_existance	src/validation/map_file.c	/^static void	path_existance(t_mode *mo
 pix	include/minilibx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img
 private_cmap	include/minilibx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar
 pshm_format	include/minilibx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar
-read_map	src/main.c	/^static void	read_map(t_mode *mode)$/;"	f	file:
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_aux_separate_ptr	src/validation/aux_v/rgb_aux.c	/^int	rgb_aux_separate_ptr(char *str)$/;"	f
 rgb_c	include/struct.h	/^	int			rgb_c;$/;"	m	struct:s_mode
