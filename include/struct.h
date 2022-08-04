@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/10 22:54:41 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:43:00 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,29 @@ typedef struct s_rgb
 	int	blue;
 }	t_rgb;
 
+typedef struct s_mlx
+{
+	void	*mlx;
+	void	*win;
+}	t_mlx;
+
+typedef struct s_data
+{
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		l_len;
+	int		endian;
+	t_pos	pos;
+}			t_data;
+
 typedef struct s_mode
 {
 	t_rgb		cell_rgb;
 	t_rgb		floor_rgb;
 	t_texture	texture;
+	t_mlx		mlx;
+	t_data		img;
 
 	char		**blueprint;
 	/* all content from map file*/
@@ -63,6 +81,7 @@ typedef struct s_mode
 	//teste mlx
 	int			cols;
 	int			rows;
+	char		player;
 }	t_mode;
 
 #endif

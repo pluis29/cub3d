@@ -14,6 +14,10 @@
 #ifndef DEFINES_H
 # define DEFINES_H
 
+
+# define WIDTH 1200
+# define HEIGHT 800
+
 # define WRONG_ARGUMENTS "Wrong usage, need two arguments: ./cub3d ./pathToMap"
 /* aux validation */
 # define INVALID_ELEMENT "Invalid elements in map file"

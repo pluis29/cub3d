@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:07:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/05 16:30:01 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/06/14 18:47:19 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,12 @@ static void	map_valid_middle(t_mode *mode)
 			/* 	check_square_space(mode, cpy_start, x); */
 			else if (mode->map_file[cpy_start][x] == '0')
 				check_square_zero(mode, cpy_start, x);
+			//remover esse daqui OOOOOOO
 			else
+			{
+				mode->player = mode->map_file[cpy_start][x];
 				check_square_zero(mode, cpy_start, x);
+			}
 
 		}
 		/* printf("\n"); */
