@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:24 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/07/17 11:29:06 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/04 07:55:48 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@
 //	int				endy;
 //}					t_rect;
 
-static void	draw_empty_square(int y,int x,t_data *img, int cor);
-static void	read_map(t_mode *mode);
-static void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-static void	draw_rect(t_data *img, t_rect rect);
-static void draw_square(int	y, int x, t_data *img, int	cor);
+static void	start_game(t_mode *mode);
+	/* static void	draw_empty_square(int y,int x,t_data *img, int cor); */
+	/* static void	read_map(t_mode *mode); */
+	/* static void	my_mlx_pixel_put(t_data *data, int x, int y, int color); */
+	/* static void	draw_rect(t_data *img, t_rect rect); */
+	/* static void draw_square(int	y, int x, t_data *img, int	cor); */
 
 int	main(int ac, char **av)
 {
@@ -114,18 +115,21 @@ int	main(int ac, char **av)
 }
 
 
-start_game(t_mode *mode)
+/**
+ * @brief start mlx and game enviroments
+ */
+static void	start_game(t_mode *mode)
 {
 	t_data	img_p;
 
 	ft_bzero(&img_p, sizeof(t_data));
 	mode->mlx.mlx = mlx_init();
 	mode->mlx.win = mlx_new_window(mode->mlx.mlx, WIDTH, HEIGHT, "Cub3D");
-	mode->img.img = mlx_new_image(mode->s_mlx.mlx, WIDTH, HEIGHT);
+	mode->img.img = mlx_new_image(mode->mlx.mlx, WIDTH, HEIGHT);
 	mode->img.addr = mlx_get_data_addr(mode->img.img, &mode->img.bpp,
 			&mode->img.l_len, &mode->img.endian);
+	start_enviroments(mode);
 }
-
 
 // static void	draw_empty_square(int y,int x,t_data *img, int cor)
 // {

@@ -14,6 +14,7 @@ P_SRC			=	src/
 P_INCLUDE		=	include/
 P_VALIDATION	=	validation/
 P_AUX_V			=	aux_v/
+P_GRAPHIC		=	graphic/
 P_OBJ			=	./obj/
 
 P_LIBFT			=	$(P_INCLUDE)libft/
@@ -21,11 +22,13 @@ P_MLX			=	$(P_INCLUDE)minilibx-linux/
 
 F_AUX_V			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c
 
+F_GRAPHIC		=	start_enviroments.c start_player.c start_texture.c
 F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c
-F_SRC			=	main.c $(VALIDATION) $(AUX_V)
+F_SRC			=	main.c $(VALIDATION) $(AUX_V) $(GRAPHIC)
 
 AUX_V			=	$(addprefix $(P_VALIDATION)$(P_AUX_V), $(F_AUX_V))
 VALIDATION		=	$(addprefix $(P_VALIDATION), $(F_VALIDATION))
+GRAPHIC			=	$(addprefix $(P_GRAPHIC), $(F_GRAPHIC))
 
 OBJ				=	$(addprefix $(P_OBJ), $(F_SRC:.c=.o))
 

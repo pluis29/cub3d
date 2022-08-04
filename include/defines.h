@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:51:56 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/04 19:29:06 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/04 09:25:34 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,24 @@
 
 # define WIDTH 1200
 # define HEIGHT 800
+
+# define TILE 64
+
+# define PI 3.14159265
+# define TWO_PI 6.28318530
+# define NUM_RAYS WIDTH
+
+# define NO 0
+# define EA 1
+# define WE 2
+# define SO 3
+/* # define NUM_TEXTURES 4 */
+
+
+
+
+
+
 
 # define WRONG_ARGUMENTS "Wrong usage, need two arguments: ./cub3d ./pathToMap"
 /* aux validation */

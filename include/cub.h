@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/10 18:05:24 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/04 09:39:58 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 int		main(int ac, char **av);
 
 /* em criacao */
+	/* MLX SHIT CRIACAO */
+void	start_enviroments(t_mode *mode);
+
+	/* player */
+void	start_player_variables(t_mode *mode);
+
 
 /* rgb */
 void	valid_comma(t_mode *mode, char *str, int comma, int i);
