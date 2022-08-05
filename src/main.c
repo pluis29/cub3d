@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:24 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 07:55:48 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/04 12:06:11 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,8 @@ static void	start_game(t_mode *mode)
 	mode->img.addr = mlx_get_data_addr(mode->img.img, &mode->img.bpp,
 			&mode->img.l_len, &mode->img.endian);
 	start_enviroments(mode);
+	
+	
 }
 
 // static void	draw_empty_square(int y,int x,t_data *img, int cor)

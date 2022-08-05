@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:51:56 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 09:25:34 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/05 09:57:20 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@
 # define EA 1
 # define WE 2
 # define SO 3
-/* # define NUM_TEXTURES 4 */
+
+/* textures */
+# define NUM_TEXTURES 4
+# define TEXTURE_WIDTH 64
+# define TEXTURE_HEIGHT 64
 
 
 

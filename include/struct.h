@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 09:29:30 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/05 10:11:14 by jgomes-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+# include <defines.h>
+# include <stdint.h>
 
 typedef enum e_bool
 {
@@ -19,12 +22,22 @@ typedef enum e_bool
 	true
 }	t_bool;
 
+typedef struct s_data
+{
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		l_len;
+	int		endian;
+	t_pos	pos;
+}			t_data;
+
 typedef struct s_texture
 {
-	char	*no;
-	char	*we;
-	char	*ea;
-	char	*so;
+	t_data	no;
+	t_data	we;
+	t_data	ea;
+	t_data	so;
 }	t_texture;
 
 typedef struct s_rgb
@@ -95,6 +108,7 @@ typedef struct s_mode
 
 
 	/* MLX GRAPHIC */
+	t_mlx		s_mlx;
 	t_mlx		mlx;
 	t_data		img;
 
@@ -106,6 +120,11 @@ typedef struct s_mode
 	/* end mlx shit */
 
 
+	/* stucts textures */
+	char		***texture_path;
+	uint32_t	*textures[NUM_TEXTURES];
+	t_texture	sprites;
+	/****************************/	
 
 	char		**blueprint; // just the map
 	/* all content from map file*/
@@ -125,6 +144,10 @@ typedef struct s_mode
 	int			rgb_c;
 	int			found_letter;
 	int			ht;
+	
+	
+	
+
 
 }	t_mode;
 
