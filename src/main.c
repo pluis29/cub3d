@@ -6,38 +6,13 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:41:24 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 12:06:11 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2022/08/06 10:44:44 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-
-//typedef struct	s_data {
-//	void	*img;
-//	char	*addr;
-//	int		bits_per_pixel;
-//	int		line_length;
-//	int		endian;
-//}				t_data;
-
-//typedef struct s_rect
-//{
-//	int				x;
-//	int				y;
-//	int				width;
-//	int				height;
-//	unsigned int	color;
-//	int				endx;
-//	int				endy;
-//}					t_rect;
-
 static void	start_game(t_mode *mode);
-	/* static void	draw_empty_square(int y,int x,t_data *img, int cor); */
-	/* static void	read_map(t_mode *mode); */
-	/* static void	my_mlx_pixel_put(t_data *data, int x, int y, int color); */
-	/* static void	draw_rect(t_data *img, t_rect rect); */
-	/* static void draw_square(int	y, int x, t_data *img, int	cor); */
 
 int	main(int ac, char **av)
 {
@@ -125,12 +100,18 @@ static void	start_game(t_mode *mode)
 	ft_bzero(&img_p, sizeof(t_data));
 	mode->mlx.mlx = mlx_init();
 	mode->mlx.win = mlx_new_window(mode->mlx.mlx, WIDTH, HEIGHT, "Cub3D");
+
 	mode->img.img = mlx_new_image(mode->mlx.mlx, WIDTH, HEIGHT);
 	mode->img.addr = mlx_get_data_addr(mode->img.img, &mode->img.bpp,
 			&mode->img.l_len, &mode->img.endian);
+
 	start_enviroments(mode);
-	
-	
+
+	mlx_hook(mode->mlx.win, 17, 0, close_aplication, (void *)mode);
+	mlx_hook(mode->mlx.win, 2, 1L << 0, key_pressed, (void *)mode);
+	mlx_hook(mode->mlx.win, 3, 1L << 1, key_release, (void *)mode);
+	mlx_loop_hook(mode->mlx.mlx, update_loop, (void *)mode);
+	mlx_loop(mode->mlx.mlx);
 }
 
 // static void	draw_empty_square(int y,int x,t_data *img, int cor)

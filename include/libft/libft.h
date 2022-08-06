@@ -6,7 +6,7 @@
 /*   By: dalves-s <dalves-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 14:58:46 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/05/29 15:59:26 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/06 10:26:42 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_variable
 }	t_variable;
 
 int		ft_cmp_by_start(const void *string1, const void *string2, int start);
+void	ft_free_void_ptr(void **ptr);
 char	*ft_free_null(char **string);
 char	*ft_free_double_ptr(char **str);
 char	*ft_free_triple_ptr(char ***str);

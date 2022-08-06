@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:51:56 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/05 09:57:20 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2022/08/06 10:35:46 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 #ifndef DEFINES_H
 # define DEFINES_H
 
+/* keycode */
+# define TOP 0x77
+# define DOWN 0x73
+# define LEFT 0x61
+# define RIGHT 0x64
+# define ARROW_LEFT 65361
+# define ARROW_RIGHT 65363
+# define ESC 0xff1b
 
+/* proporcao da aplicacao */
 # define WIDTH 1200
 # define HEIGHT 800
 
@@ -24,12 +33,11 @@
 # define TWO_PI 6.28318530
 # define NUM_RAYS WIDTH
 
+/* textures */
 # define NO 0
 # define EA 1
 # define WE 2
 # define SO 3
-
-/* textures */
 # define NUM_TEXTURES 4
 # define TEXTURE_WIDTH 64
 # define TEXTURE_HEIGHT 64

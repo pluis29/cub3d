@@ -6,19 +6,13 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 07:56:28 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/05 10:11:33 by jgomes-c         ###   ########.fr       */
+/*   Updated: 2022/08/05 19:48:02 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-void	free_images(t_mode *mode)
-{
-	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.no.img);
-	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.so.img);
-	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.we.img);
-	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.ea.img);
-}
+static void	free_images(t_mode *mode);
 
 void	start_enviroments(t_mode *mode)
 {
@@ -29,4 +23,12 @@ void	start_enviroments(t_mode *mode)
 	start_player_variables(mode);
 	start_textures(mode);
 	free_images(mode);
+}
+
+static void	free_images(t_mode *mode)
+{
+	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.no.img);
+	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.so.img);
+	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.we.img);
+	mlx_destroy_image(mode->s_mlx.mlx, mode->sprites.ea.img);
 }

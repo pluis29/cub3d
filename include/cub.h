@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 09:39:58 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/06 12:41:54 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <math.h>
 
 int		main(int ac, char **av);
 
@@ -31,6 +32,29 @@ void	start_enviroments(t_mode *mode);
 
 	/* player */
 void	start_player_variables(t_mode *mode);
+
+	/* texture */
+void	start_textures(t_mode *mode);
+
+	/* handle_events */
+int		key_pressed(int keycode, t_mode *mode);
+int		key_release(int key, t_mode *mode);
+int		close_aplication(t_mode *mode);
+
+	/* update_loop */
+int		update_loop(t_mode *mode);
+
+	/* player movement */
+void	player_movement(t_mode *mode);
+
+
+
+
+
+
+
+
+
 
 
 /* rgb */

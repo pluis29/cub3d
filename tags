@@ -5,6 +5,8 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ANSI_COLOR_H	include/ansi_color.h	14;"	d
+ARROW_LEFT	include/defines.h	22;"	d
+ARROW_RIGHT	include/defines.h	23;"	d
 AUX_V	Makefile	/^AUX_V			=	$(addprefix $(P_VALIDATION)$(P_AUX_V), $(F_AUX_V))$/;"	m
 BBLK	include/ansi_color.h	27;"	d
 BBLU	include/ansi_color.h	31;"	d
@@ -39,19 +41,22 @@ CFLAGS	Makefile	/^CFLAGS			=	#-Wall -Wextra -Werror #-fsanitize=address$/;"	m
 CFLAGS	include/libft/Makefile	/^CFLAGS		=	-Wall -Wextra -Werror$/;"	m
 CFLAGS	include/minilibx-linux/Makefile.mk	/^CFLAGS	= -O3 -I$(INC)$/;"	m
 CFLAGS	include/minilibx-linux/test/Makefile.mk	/^CFLAGS= -I$(INC) -O3 -I.. -g$/;"	m
-CUB_FILE_NOT_FOUND	include/defines.h	28;"	d
+CUB_FILE_NOT_FOUND	include/defines.h	58;"	d
 CUB_H	include/cub.h	14;"	d
 CYN	include/ansi_color.h	23;"	d
 CYNB	include/ansi_color.h	53;"	d
 CYNHB	include/ansi_color.h	63;"	d
 DEFINES_H	include/defines.h	15;"	d
-EMPTY_CUB_FILE	include/defines.h	29;"	d
-EMPTY_TEXTURE	include/defines.h	34;"	d
-END_WITH_INVALID	include/defines.h	25;"	d
+DOWN	include/defines.h	19;"	d
+EA	include/defines.h	38;"	d
+EMPTY_CUB_FILE	include/defines.h	59;"	d
+EMPTY_TEXTURE	include/defines.h	64;"	d
+END_WITH_INVALID	include/defines.h	55;"	d
 ENV_DISPLAY	include/minilibx-linux/mlx_int.h	43;"	d
 ERR_NO_TRUECOLOR	include/minilibx-linux/mlx_int.h	45;"	d
+ESC	include/defines.h	24;"	d
 F_AUX_V	Makefile	/^F_AUX_V			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c$/;"	m
-F_GRAPHIC	Makefile	/^F_GRAPHIC		=	start_enviroments.c$/;"	m
+F_GRAPHIC	Makefile	/^F_GRAPHIC		=	start_enviroments.c start_player.c start_texture.c$/;"	m
 F_MANDATORY	include/libft/Makefile	/^F_MANDATORY	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \\$/;"	m
 F_SRC	Makefile	/^F_SRC			=	main.c $(VALIDATION) $(AUX_V) $(GRAPHIC)$/;"	m
 F_VALIDATION	Makefile	/^F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c$/;"	m
@@ -62,7 +67,7 @@ GRNHB	include/ansi_color.h	59;"	d
 HBLK	include/ansi_color.h	67;"	d
 HBLU	include/ansi_color.h	71;"	d
 HCYN	include/ansi_color.h	73;"	d
-HEIGHT	include/defines.h	19;"	d
+HEIGHT	include/defines.h	28;"	d
 HGRN	include/ansi_color.h	69;"	d
 HMAG	include/ansi_color.h	72;"	d
 HRED	include/ansi_color.h	68;"	d
@@ -77,9 +82,10 @@ INC	include/libft/Makefile	/^INC			=	-I .$/;"	m
 INC	include/minilibx-linux/Makefile.mk	/^INC	=%%%%$/;"	m
 INC	include/minilibx-linux/test/Makefile.mk	/^INC=%%%%$/;"	m
 INCLIB	include/minilibx-linux/test/Makefile.mk	/^INCLIB=$(INC)\/..\/lib$/;"	m
-INVALID_ELEMENT	include/defines.h	23;"	d
-INVALID_MAP	include/defines.h	39;"	d
-INVALID_PLAYER	include/defines.h	41;"	d
+INVALID_ELEMENT	include/defines.h	53;"	d
+INVALID_MAP	include/defines.h	69;"	d
+INVALID_PLAYER	include/defines.h	71;"	d
+LEFT	include/defines.h	20;"	d
 LFLAGS	include/minilibx-linux/test/Makefile.mk	/^LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm$/;"	m
 LIBFT	Makefile	/^LIBFT			=	-L $(P_LIBFT) -l ft$/;"	m
 LIBFT_H	include/libft/libft.h	14;"	d
@@ -101,12 +107,16 @@ NAME	include/libft/Makefile	/^NAME		=	libft.a$/;"	m
 NAME	include/minilibx-linux/Makefile.mk	/^NAME		= libmlx.a$/;"	m
 NAME	include/minilibx-linux/test/Makefile.mk	/^NAME= mlx-test$/;"	m
 NAME_UNAME	include/minilibx-linux/Makefile.mk	/^NAME_UNAME	= libmlx_$(UNAME).a$/;"	m
-NOT_FOUND_PLAYER	include/defines.h	40;"	d
+NO	include/defines.h	37;"	d
+NOT_FOUND_PLAYER	include/defines.h	70;"	d
+NUM_RAYS	include/defines.h	34;"	d
+NUM_TEXTURES	include/defines.h	41;"	d
 OBJ	Makefile	/^OBJ				=	$(addprefix $(P_OBJ), $(F_SRC:.c=.o))$/;"	m
 OBJ	include/libft/Makefile	/^OBJ			=	$(addprefix $(P_OBJ), $(SRC:.c=.o))$/;"	m
 OBJ	include/minilibx-linux/Makefile.mk	/^OBJ	= $(addprefix $(OBJ_DIR)\/,$(SRC:%.c=%.o))$/;"	m
 OBJ	include/minilibx-linux/test/Makefile.mk	/^OBJ = $(SRC:%.c=%.o)$/;"	m
 OBJ_DIR	include/minilibx-linux/Makefile.mk	/^OBJ_DIR = obj$/;"	m
+PI	include/defines.h	32;"	d
 P_AUX_V	Makefile	/^P_AUX_V			=	aux_v\/$/;"	m
 P_GRAPHIC	Makefile	/^P_GRAPHIC		=	graphic\/$/;"	m
 P_GUARD	Makefile	/^P_GUARD			=	mkdir -p $(@D)$/;"	m
@@ -124,15 +134,22 @@ REDB	include/ansi_color.h	48;"	d
 REDHB	include/ansi_color.h	58;"	d
 RESET	include/ansi_color.h	87;"	d
 RETURN	include/minilibx-linux/mlx_xpm.c	17;"	d	file:
-RGB_NOT_SPECIFIED	include/defines.h	36;"	d
+RGB_NOT_SPECIFIED	include/defines.h	66;"	d
+RIGHT	include/defines.h	21;"	d
 RM	Makefile	/^RM				=	rm -rf$/;"	m
 RM	include/libft/Makefile	/^RM			=	rm -rf$/;"	m
-SAME_ELEMENT	include/defines.h	24;"	d
+SAME_ELEMENT	include/defines.h	54;"	d
+SO	include/defines.h	40;"	d
 SRC	include/libft/Makefile	/^SRC			=	$(MANDATORY)$/;"	m
 SRC	include/minilibx-linux/Makefile.mk	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
 SRC	include/minilibx-linux/test/Makefile.mk	/^SRC = main.c$/;"	m
 STRUCT_H	include/struct.h	14;"	d
-TEXTURE_NOT_SPECIFIED	include/defines.h	31;"	d
+TEXTURE_HEIGHT	include/defines.h	43;"	d
+TEXTURE_NOT_SPECIFIED	include/defines.h	61;"	d
+TEXTURE_WIDTH	include/defines.h	42;"	d
+TILE	include/defines.h	30;"	d
+TOP	include/defines.h	18;"	d
+TWO_PI	include/defines.h	33;"	d
 UBLK	include/ansi_color.h	37;"	d
 UBLU	include/ansi_color.h	41;"	d
 UCYN	include/ansi_color.h	43;"	d
@@ -145,17 +162,18 @@ UWHT	include/ansi_color.h	44;"	d
 UYEL	include/ansi_color.h	40;"	d
 VALIDATION	Makefile	/^VALIDATION		=	$(addprefix $(P_VALIDATION), $(F_VALIDATION))$/;"	m
 WARN_SHM_ATTACH	include/minilibx-linux/mlx_int.h	46;"	d
+WE	include/defines.h	39;"	d
 WHT	include/ansi_color.h	24;"	d
 WHTB	include/ansi_color.h	54;"	d
 WHTHB	include/ansi_color.h	64;"	d
-WIDTH	include/defines.h	18;"	d
+WIDTH	include/defines.h	27;"	d
 WIN1_SX	include/minilibx-linux/test/main.c	5;"	d	file:
 WIN1_SY	include/minilibx-linux/test/main.c	6;"	d	file:
-WRONG_ARGUMENTS	include/defines.h	21;"	d
-WRONG_CUB_TYPE_FILE	include/defines.h	27;"	d
-WRONG_RGB	include/defines.h	37;"	d
-WRONG_TEXTURE_TYPE_FILE	include/defines.h	32;"	d
-XMP_FILE_NOT_FOUND	include/defines.h	33;"	d
+WRONG_ARGUMENTS	include/defines.h	51;"	d
+WRONG_CUB_TYPE_FILE	include/defines.h	57;"	d
+WRONG_RGB	include/defines.h	67;"	d
+WRONG_TEXTURE_TYPE_FILE	include/defines.h	62;"	d
+XMP_FILE_NOT_FOUND	include/defines.h	63;"	d
 X_ShmAttach	include/minilibx-linux/mlx_new_image.c	20;"	d	file:
 YEL	include/ansi_color.h	20;"	d
 YELB	include/ansi_color.h	50;"	d
@@ -163,7 +181,7 @@ YELHB	include/ansi_color.h	60;"	d
 addr	include/struct.h	/^	char	*addr;$/;"	m	struct:s_data
 at_exit	include/minilibx-linux/test/run_tests.sh	/^at_exit() {$/;"	f
 blue	include/struct.h	/^	int	blue;$/;"	m	struct:s_rgb
-blueprint	include/struct.h	/^	char		**blueprint;$/;"	m	struct:s_mode
+blueprint	include/struct.h	/^	char		**blueprint; \/\/ just the map$/;"	m	struct:s_mode
 bpp	include/minilibx-linux/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img
 bpp	include/struct.h	/^	int		bpp;$/;"	m	struct:s_data
 bpp1	include/minilibx-linux/test/main.c	/^int	bpp1;$/;"	v
@@ -182,12 +200,12 @@ check_square_zero	src/validation/aux_v/blueprint_aux.c	/^void	check_square_zero(
 check_veracity	src/validation/aux_v/map_file_aux.c	/^static int	check_veracity(char *s, int posi)$/;"	f	file:
 clean	include/minilibx-linux/configure	/^clean(){$/;"	f
 close_all	src/validation/aux_v/exit_and_free.c	/^void	close_all(t_mode *mode, char *reason)$/;"	f
+close_aplication	src/graphic/handle_events.c	/^int	close_aplication(t_mode *mode)$/;"	f
 cmap	include/minilibx-linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar
 col	include/minilibx-linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col
 color	include/minilibx-linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name
 color_map_1	include/minilibx-linux/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f
 color_map_2	include/minilibx-linux/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f
-cols	include/struct.h	/^	int			cols;$/;"	m	struct:s_mode
 data	include/minilibx-linux/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img
 data1	include/minilibx-linux/test/main.c	/^char	*data1;$/;"	v
 data2	include/minilibx-linux/test/main.c	/^char	*data2;$/;"	v
@@ -198,8 +216,8 @@ depth	include/minilibx-linux/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar
 display	include/minilibx-linux/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar
 do_flush	include/minilibx-linux/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar
 e_bool	include/struct.h	/^typedef enum e_bool$/;"	g
-ea	include/struct.h	/^	char	*ea;$/;"	m	struct:s_texture
 ea	include/struct.h	/^	int			ea;$/;"	m	struct:s_mode
+ea	include/struct.h	/^	t_data	ea;$/;"	m	struct:s_texture
 end_loop	include/minilibx-linux/mlx_int.h	/^	int 		end_loop;$/;"	m	struct:s_xvar
 endian	include/struct.h	/^	int		endian;$/;"	m	struct:s_data
 endian1	include/minilibx-linux/test/main.c	/^int	endian1;$/;"	v
@@ -217,6 +235,8 @@ find_texture	src/validation/texture.c	/^void	find_texture(t_mode *mode, int i)$/
 floor_rgb	include/struct.h	/^	t_rgb		floor_rgb;$/;"	m	struct:s_mode
 format	include/minilibx-linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img
 found_letter	include/struct.h	/^	int			found_letter;$/;"	m	struct:s_mode
+free_images	src/graphic/start_enviroments.c	/^static void	free_images(t_mode *mode)$/;"	f	file:
+free_mlx	src/graphic/handle_events.c	/^static void	free_mlx(t_mode *mode)$/;"	f	file:
 free_struct	src/validation/aux_v/exit_and_free.c	/^void	free_struct(t_mode *mode)$/;"	f
 ft_atoi	include/libft/mandatory/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f
 ft_bzero	include/libft/mandatory/ft_bzero.c	/^void	ft_bzero(void *s, size_t len)$/;"	f
@@ -229,6 +249,7 @@ ft_free	include/libft/mandatory/ft_split.c	/^static char	**ft_free(char **tab, s
 ft_free_double_ptr	include/libft/mandatory/ft_free_double_ptr.c	/^char	*ft_free_double_ptr(char **str)$/;"	f
 ft_free_null	include/libft/mandatory/ft_free_null.c	/^char	*ft_free_null(char **string)$/;"	f
 ft_free_triple_ptr	include/libft/mandatory/ft_free_triple_ptr.c	/^char	*ft_free_triple_ptr(char ***str)$/;"	f
+ft_free_void_ptr	include/libft/mandatory/ft_free_void_ptr.c	/^void	ft_free_void_ptr(void **ptr)$/;"	f
 ft_get_next_line	include/libft/mandatory/ft_get_next_line.c	/^int	ft_get_next_line(int fd, char **line)$/;"	f
 ft_guide	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_guide(int index, char **plus, char **line)$/;"	f	file:
 ft_isalnum	include/libft/mandatory/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
@@ -267,10 +288,17 @@ ft_transfer	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_transfer(
 gc	include/minilibx-linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list
 gc	include/minilibx-linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img
 gere_mouse	include/minilibx-linux/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f
+get_color	src/graphic/start_texture.c	/^static unsigned int	get_color(t_data *data, int x, int y)$/;"	f	file:
+get_lenght	src/graphic/player_movement.c	/^static int	get_lenght(t_mode *mode, float line)$/;"	f	file:
+get_player_initial_position	src/graphic/start_player.c	/^static void	get_player_initial_position(t_mode *mode)$/;"	f	file:
 get_start_end_from_map	src/validation/map_file.c	/^static void	get_start_end_from_map(t_mode *mode, int file_lines)$/;"	f	file:
+get_texture_buffer	src/graphic/start_texture.c	/^static uint32_t	*get_texture_buffer(t_data *img)$/;"	f	file:
 get_xlib_include_path	include/minilibx-linux/configure	/^get_xlib_include_path(){$/;"	f
 green	include/struct.h	/^	int	green;$/;"	m	struct:s_rgb
+has_wall_at	src/graphic/player_movement.c	/^static int	has_wall_at(t_mode *mode, float x, float y)$/;"	f	file:
 height	include/minilibx-linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img
+height	include/struct.h	/^	float	height;$/;"	m	struct:s_player
+height	include/struct.h	/^	int	height;$/;"	m	struct:s_map_size
 hook	include/minilibx-linux/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list
 hooks	include/minilibx-linux/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list
 ht	include/struct.h	/^	int			ht;$/;"	m	struct:s_mode
@@ -285,6 +313,8 @@ index	include/libft/libft.h	/^	ssize_t		index;$/;"	m	struct:s_variable
 just_close	src/validation/aux_v/exit_and_free.c	/^void	just_close(t_mode *mode)$/;"	f
 key_hook	include/minilibx-linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list
 key_param	include/minilibx-linux/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list
+key_pressed	src/graphic/handle_events.c	/^int	key_pressed(int keycode, t_mode *mode)$/;"	f
+key_release	src/graphic/handle_events.c	/^int	key_release(int key, t_mode *mode)$/;"	f
 key_win1	include/minilibx-linux/test/main.c	/^int	key_win1(int key,void *p)$/;"	f
 key_win2	include/minilibx-linux/test/main.c	/^int	key_win2(int key,void *p)$/;"	f
 key_win3	include/minilibx-linux/test/main.c	/^int	key_win3(int key,void *p)$/;"	f
@@ -305,8 +335,9 @@ main	include/minilibx-linux/test/new_win.c	/^int main()$/;"	f
 main	include/minilibx-linux/test/run_tests.sh	/^main(){$/;"	f
 main	src/main.c	/^int	main(int ac, char **av)$/;"	f
 map_end_in	include/struct.h	/^	int			map_end_in;$/;"	m	struct:s_mode
-map_file	include/struct.h	/^	char		**map_file;$/;"	m	struct:s_mode
+map_file	include/struct.h	/^	char		**map_file; \/\/ all the map in the file$/;"	m	struct:s_mode
 map_file_redirect	src/validation/map_file.c	/^void	map_file_redirect(t_mode *mode, char *path)$/;"	f
+map_size	include/struct.h	/^	t_map_size	map_size;$/;"	m	struct:s_mode
 map_start_in	include/struct.h	/^	int			map_start_in;$/;"	m	struct:s_mode
 map_valid_bottom_and_top_row	src/validation/blueprint.c	/^static void	map_valid_bottom_and_top_row(t_mode *mode)$/;"	f	file:
 map_valid_left_right_column	src/validation/blueprint.c	/^static void	map_valid_left_right_column(t_mode *mode)$/;"	f	file:
@@ -393,16 +424,19 @@ mouse_win3	include/minilibx-linux/test/main.c	/^int	mouse_win3(int x,int y, void
 name	include/minilibx-linux/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name
 name	include/minilibx-linux/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col
 next	include/minilibx-linux/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list::s_win_list
-no	include/struct.h	/^	char	*no;$/;"	m	struct:s_texture
 no	include/struct.h	/^	int			no;$/;"	m	struct:s_mode
+no	include/struct.h	/^	t_data	no;$/;"	m	struct:s_texture
+orientation	include/struct.h	/^	int		orientation;$/;"	m	struct:s_player
 param	include/minilibx-linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list
 parse_args	include/minilibx-linux/configure	/^parse_args(){$/;"	f
 path_existance	src/validation/map_file.c	/^static void	path_existance(t_mode *mode, char *path)$/;"	f	file:
 pix	include/minilibx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img
-player	include/struct.h	/^	char		player;$/;"	m	struct:s_mode
+player	include/struct.h	/^	t_player	player;$/;"	m	struct:s_mode
+player_movement	src/graphic/player_movement.c	/^void	player_movement(t_mode *mode)$/;"	f
 pos	include/struct.h	/^	t_pos	pos;$/;"	m	struct:s_data
 private_cmap	include/minilibx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar
 pshm_format	include/minilibx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar
+read_map	src/graphic/start_player.c	/^static void	read_map(t_mode *mode)$/;"	f	file:
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_aux_separate_ptr	src/validation/aux_v/rgb_aux.c	/^int	rgb_aux_separate_ptr(char *str)$/;"	f
 rgb_c	include/struct.h	/^	int			rgb_c;$/;"	m	struct:s_mode
@@ -413,25 +447,31 @@ rgb_separate_ptr_cont	src/validation/rgb.c	/^static void	rgb_separate_ptr_cont(t
 rgb_setup_to_struct	src/validation/rgb.c	/^static t_rgb	rgb_setup_to_struct(t_mode *mode, int tag)$/;"	f	file:
 rgb_validation_setup_colors_struct	src/validation/rgb.c	/^static void	rgb_validation_setup_colors_struct(t_mode *mode)$/;"	f	file:
 root	include/minilibx-linux/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar
-rows	include/struct.h	/^	int			rows;$/;"	m	struct:s_mode
+rotation_angle	include/struct.h	/^	float	rotation_angle;$/;"	m	struct:s_player
 s_col_name	include/minilibx-linux/mlx_int.h	/^struct	s_col_name$/;"	s
 s_data	include/struct.h	/^typedef struct s_data$/;"	s
 s_event_list	include/minilibx-linux/mlx_int.h	/^typedef struct	s_event_list$/;"	s
 s_img	include/minilibx-linux/mlx_int.h	/^typedef struct	s_img$/;"	s
+s_map_size	include/struct.h	/^typedef struct s_map_size$/;"	s
 s_mlx	include/struct.h	/^typedef struct s_mlx$/;"	s
 s_mode	include/struct.h	/^typedef struct s_mode$/;"	s
+s_player	include/struct.h	/^typedef struct s_player$/;"	s
+s_pos	include/struct.h	/^typedef struct s_pos$/;"	s
 s_rgb	include/struct.h	/^typedef struct s_rgb$/;"	s
 s_texture	include/struct.h	/^typedef struct s_texture$/;"	s
 s_variable	include/libft/libft.h	/^typedef struct s_variable$/;"	s
 s_win_list	include/minilibx-linux/mlx_int.h	/^typedef struct	s_win_list$/;"	s
 s_xpm_col	include/minilibx-linux/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
 s_xvar	include/minilibx-linux/mlx_int.h	/^typedef struct	s_xvar$/;"	s
+save_initial_angle	src/graphic/start_player.c	/^static void	save_initial_angle(t_mode *mode)$/;"	f	file:
+save_initial_orientation	src/graphic/start_player.c	/^static void	save_initial_orientation(t_mode *mode, char facing)$/;"	f	file:
 saved_mode	include/minilibx-linux/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v
 screen	include/minilibx-linux/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar
 set_blueprint	src/validation/aux_v/blueprint_aux.c	/^void	set_blueprint(t_mode *mode)$/;"	f
 shm	include/minilibx-linux/mlx_int.h	/^	XShmSegmentInfo	shm;$/;"	m	struct:s_img
 shm_att_pb	include/minilibx-linux/mlx_new_image.c	/^int	shm_att_pb(Display *d,XErrorEvent *ev)$/;"	f
 show_help	include/minilibx-linux/configure	/^show_help(){$/;"	f
+side_direction	include/struct.h	/^	int		side_direction;$/;"	m	struct:s_player
 sigint_handler	include/minilibx-linux/test/run_tests.sh	/^sigint_handler(){$/;"	f
 size_line	include/minilibx-linux/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img
 skip_space_cmp	src/validation/aux_v/map_file_aux.c	/^int	skip_space_cmp(const void *s1, const void *s2, size_t n)$/;"	f
@@ -439,17 +479,25 @@ sl1	include/minilibx-linux/test/main.c	/^int	sl1;$/;"	v
 sl2	include/minilibx-linux/test/main.c	/^int	sl2;$/;"	v
 sl3	include/minilibx-linux/test/main.c	/^int	sl3;$/;"	v
 sl4	include/minilibx-linux/test/main.c	/^int	sl4;$/;"	v
-so	include/struct.h	/^	char	*so;$/;"	m	struct:s_texture
 so	include/struct.h	/^	int			so;$/;"	m	struct:s_mode
+so	include/struct.h	/^	t_data	so;$/;"	m	struct:s_texture
+sprites	include/struct.h	/^	t_texture	sprites;$/;"	m	struct:s_mode
+sprites	src/graphic/start_texture.c	/^static void	sprites(t_data *img, void *mlx, char *path)$/;"	f	file:
+start_enviroments	src/graphic/start_enviroments.c	/^void	start_enviroments(t_mode *mode)$/;"	f
 start_game	src/main.c	/^static void	start_game(t_mode *mode)$/;"	f	file:
+start_player_variables	src/graphic/start_player.c	/^void	start_player_variables(t_mode *mode)$/;"	f
+start_textures	src/graphic/start_texture.c	/^void	start_textures(t_mode *mode)$/;"	f
 store_map_file	src/validation/map_file.c	/^static void	store_map_file(t_mode *mode, int lines, char *path)$/;"	f	file:
 strlcpy_is_not_posix	include/minilibx-linux/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f
 t_bool	include/struct.h	/^}	t_bool;$/;"	t	typeref:enum:e_bool
-t_data	include/struct.h	/^}			t_data;$/;"	t	typeref:struct:s_data
+t_data	include/struct.h	/^}	t_data;$/;"	t	typeref:struct:s_data
 t_event_list	include/minilibx-linux/mlx_int.h	/^}				t_event_list;$/;"	t	typeref:struct:s_event_list
 t_img	include/minilibx-linux/mlx_int.h	/^}				t_img;$/;"	t	typeref:struct:s_img
+t_map_size	include/struct.h	/^}	t_map_size;$/;"	t	typeref:struct:s_map_size
 t_mlx	include/struct.h	/^}	t_mlx;$/;"	t	typeref:struct:s_mlx
 t_mode	include/struct.h	/^}	t_mode;$/;"	t	typeref:struct:s_mode
+t_player	include/struct.h	/^}	t_player;$/;"	t	typeref:struct:s_player
+t_pos	include/struct.h	/^}	t_pos;$/;"	t	typeref:struct:s_pos
 t_rgb	include/struct.h	/^}	t_rgb;$/;"	t	typeref:struct:s_rgb
 t_texture	include/struct.h	/^}	t_texture;$/;"	t	typeref:struct:s_texture
 t_variable	include/libft/libft.h	/^}	t_variable;$/;"	t	typeref:struct:s_variable
@@ -460,20 +508,29 @@ temp_color	include/struct.h	/^	char		**temp_color;$/;"	m	struct:s_mode
 temp_rgb	include/struct.h	/^	char		***temp_rgb;$/;"	m	struct:s_mode
 temp_texture	include/struct.h	/^	char		***temp_texture;$/;"	m	struct:s_mode
 test_default_main	include/minilibx-linux/test/run_tests.sh	/^test_default_main(){$/;"	f
-texture	include/struct.h	/^	t_texture	texture;$/;"	m	struct:s_mode
 texture_exists	src/validation/texture.c	/^static void	texture_exists(t_mode *m, int i)$/;"	f	file:
 texture_extension	src/validation/texture.c	/^static void	texture_extension(t_mode *mode)$/;"	f	file:
+texture_path	include/struct.h	/^	char		***texture_path; \/\/AQUIII$/;"	m	struct:s_mode
 texture_valid_path_and_empty	src/validation/texture.c	/^static void	texture_valid_path_and_empty(t_mode *mode)$/;"	f	file:
+textures	include/struct.h	/^	uint32_t	*textures[NUM_TEXTURES];$/;"	m	struct:s_mode
 tmp	include/libft/libft.h	/^	char		*tmp;$/;"	m	struct:s_variable
 true	include/struct.h	/^	true$/;"	e	enum:e_bool
+turn_direction	include/struct.h	/^	int		turn_direction;$/;"	m	struct:s_player
+turn_speed	include/struct.h	/^	float	turn_speed;$/;"	m	struct:s_player
 type	include/minilibx-linux/mlx_int.h	/^	int				type;$/;"	m	struct:s_img
+update_loop	src/graphic/update_loop.c	/^int	update_loop(t_mode *mode)$/;"	f
+update_variable	src/graphic/update_loop.c	/^static void	update_variable(t_mode *mode)$/;"	f	file:
 use_xshm	include/minilibx-linux/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar
 valid_comma	src/validation/aux_v/rgb_aux.c	/^void	valid_comma(t_mode *mode, char *str, int comma, int i)$/;"	f
 valid_comma_end	src/validation/aux_v/rgb_aux.c	/^static void	valid_comma_end(t_mode *mode, char *str)$/;"	f	file:
 visual	include/minilibx-linux/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar
-we	include/struct.h	/^	char	*we;$/;"	m	struct:s_texture
+walk_direction	include/struct.h	/^	int		walk_direction;$/;"	m	struct:s_player
+walk_speed	include/struct.h	/^	float	walk_speed;$/;"	m	struct:s_player
 we	include/struct.h	/^	int			we;$/;"	m	struct:s_mode
+we	include/struct.h	/^	t_data	we;$/;"	m	struct:s_texture
 width	include/minilibx-linux/mlx_int.h	/^	int				width;$/;"	m	struct:s_img
+width	include/struct.h	/^	float	width;$/;"	m	struct:s_player
+width	include/struct.h	/^	int	width;$/;"	m	struct:s_map_size
 win	include/struct.h	/^	void	*win;$/;"	m	struct:s_mlx
 win1	include/minilibx-linux/test/main.c	/^void	*win1;$/;"	v
 win1	include/minilibx-linux/test/new_win.c	/^void *win1;$/;"	v
@@ -485,5 +542,9 @@ win_list	include/minilibx-linux/mlx_int.h	/^	t_win_list	*win_list;$/;"	m	struct:
 window	include/minilibx-linux/mlx_int.h	/^	Window				window;$/;"	m	struct:s_win_list
 wm_delete_window	include/minilibx-linux/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xvar
 wm_protocols	include/minilibx-linux/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar
+x	include/struct.h	/^	float	x;$/;"	m	struct:s_player
+x	include/struct.h	/^	int	x;$/;"	m	struct:s_pos
 xpm1_x	include/minilibx-linux/test/main.c	/^int	xpm1_x;$/;"	v
 xpm1_y	include/minilibx-linux/test/main.c	/^int	xpm1_y;$/;"	v
+y	include/struct.h	/^	float	y;$/;"	m	struct:s_player
+y	include/struct.h	/^	int	y;$/;"	m	struct:s_pos
