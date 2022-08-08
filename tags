@@ -55,10 +55,10 @@ END_WITH_INVALID	include/defines.h	55;"	d
 ENV_DISPLAY	include/minilibx-linux/mlx_int.h	43;"	d
 ERR_NO_TRUECOLOR	include/minilibx-linux/mlx_int.h	45;"	d
 ESC	include/defines.h	24;"	d
-F_AUX_V	Makefile	/^F_AUX_V			=	exit_and_free.c map_file_aux.c blueprint_aux.c rgb_aux.c$/;"	m
+F_AUX_V	Makefile	/^F_AUX_V			=	map_file_aux.c blueprint_aux.c rgb_aux.c$/;"	m
 F_GRAPHIC	Makefile	/^F_GRAPHIC		=	start_enviroments.c start_player.c start_texture.c$/;"	m
 F_MANDATORY	include/libft/Makefile	/^F_MANDATORY	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \\$/;"	m
-F_SRC	Makefile	/^F_SRC			=	main.c $(VALIDATION) $(AUX_V) $(GRAPHIC)$/;"	m
+F_SRC	Makefile	/^F_SRC			=	main.c exit_and_free.c $(VALIDATION) $(AUX_V) $(GRAPHIC)$/;"	m
 F_VALIDATION	Makefile	/^F_VALIDATION	=	map_file.c texture.c rgb.c blueprint.c$/;"	m
 GRAPHIC	Makefile	/^GRAPHIC			=	$(addprefix $(P_GRAPHIC), $(F_GRAPHIC))$/;"	m
 GRN	include/ansi_color.h	19;"	d
@@ -189,6 +189,8 @@ bpp2	include/minilibx-linux/test/main.c	/^int	bpp2;$/;"	v
 bpp3	include/minilibx-linux/test/main.c	/^int	bpp3;$/;"	v
 bpp4	include/minilibx-linux/test/main.c	/^int	bpp4;$/;"	v
 buf	include/libft/libft.h	/^	char		*buf;$/;"	m	struct:s_variable
+cast_all_rays	src/graphic/rays/rays.c	/^void	cast_all_rays(t_mode *mode)$/;"	f
+cast_ray	src/graphic/rays/rays.c	/^static void	cast_ray(t_mode *mode, float ray_angle, int	col_id)$/;"	f	file:
 cell_rgb	include/struct.h	/^	t_rgb		cell_rgb;$/;"	m	struct:s_mode
 check_blueprint	src/validation/blueprint.c	/^void	check_blueprint(t_mode *mode)$/;"	f
 check_end_of_file	src/validation/aux_v/map_file_aux.c	/^void	check_end_of_file(t_mode *mode)$/;"	f
@@ -199,8 +201,8 @@ check_square_space	src/validation/aux_v/blueprint_aux.c	/^void	check_square_spac
 check_square_zero	src/validation/aux_v/blueprint_aux.c	/^void	check_square_zero(t_mode *mode, int posi, int x)$/;"	f
 check_veracity	src/validation/aux_v/map_file_aux.c	/^static int	check_veracity(char *s, int posi)$/;"	f	file:
 clean	include/minilibx-linux/configure	/^clean(){$/;"	f
-close_all	src/validation/aux_v/exit_and_free.c	/^void	close_all(t_mode *mode, char *reason)$/;"	f
-close_aplication	src/graphic/handle_events.c	/^int	close_aplication(t_mode *mode)$/;"	f
+close_all	src/exit_and_free.c	/^void	close_all(t_mode *mode, char *reason)$/;"	f
+close_aplication	src/exit_and_free.c	/^int	close_aplication(t_mode *mode)$/;"	f
 cmap	include/minilibx-linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar
 col	include/minilibx-linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col
 color	include/minilibx-linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name
@@ -214,6 +216,7 @@ data4	include/minilibx-linux/test/main.c	/^char	*data4;$/;"	v
 decrgb	include/minilibx-linux/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar
 depth	include/minilibx-linux/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar
 display	include/minilibx-linux/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar
+dist_proj_plane	include/struct.h	/^	double		dist_proj_plane; \/\/distancia ate a projecao plana\/tela |\/$/;"	m	struct:s_mode
 do_flush	include/minilibx-linux/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar
 e_bool	include/struct.h	/^typedef enum e_bool$/;"	g
 ea	include/struct.h	/^	int			ea;$/;"	m	struct:s_mode
@@ -235,9 +238,9 @@ find_texture	src/validation/texture.c	/^void	find_texture(t_mode *mode, int i)$/
 floor_rgb	include/struct.h	/^	t_rgb		floor_rgb;$/;"	m	struct:s_mode
 format	include/minilibx-linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img
 found_letter	include/struct.h	/^	int			found_letter;$/;"	m	struct:s_mode
-free_images	src/graphic/start_enviroments.c	/^static void	free_images(t_mode *mode)$/;"	f	file:
-free_mlx	src/graphic/handle_events.c	/^static void	free_mlx(t_mode *mode)$/;"	f	file:
-free_struct	src/validation/aux_v/exit_and_free.c	/^void	free_struct(t_mode *mode)$/;"	f
+free_images	src/graphic/start_var/start_enviroments.c	/^static void	free_images(t_mode *mode)$/;"	f	file:
+free_mlx	src/exit_and_free.c	/^void	free_mlx(t_mode *mode)$/;"	f
+free_struct	src/exit_and_free.c	/^void	free_struct(t_mode *mode)$/;"	f
 ft_atoi	include/libft/mandatory/ft_atoi.c	/^int	ft_atoi(const char *nptr)$/;"	f
 ft_bzero	include/libft/mandatory/ft_bzero.c	/^void	ft_bzero(void *s, size_t len)$/;"	f
 ft_calloc	include/libft/mandatory/ft_calloc.c	/^void	*ft_calloc(size_t nmemb, size_t size)$/;"	f
@@ -288,14 +291,14 @@ ft_transfer	include/libft/mandatory/ft_get_next_line.c	/^static int	ft_transfer(
 gc	include/minilibx-linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list
 gc	include/minilibx-linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img
 gere_mouse	include/minilibx-linux/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f
-get_color	src/graphic/start_texture.c	/^static unsigned int	get_color(t_data *data, int x, int y)$/;"	f	file:
-get_lenght	src/graphic/player_movement.c	/^static int	get_lenght(t_mode *mode, float line)$/;"	f	file:
-get_player_initial_position	src/graphic/start_player.c	/^static void	get_player_initial_position(t_mode *mode)$/;"	f	file:
+get_color	src/graphic/start_var/start_texture.c	/^static unsigned int	get_color(t_data *data, int x, int y)$/;"	f	file:
+get_lenght	src/graphic/update_var/player_movement.c	/^static int	get_lenght(t_mode *mode, float line)$/;"	f	file:
+get_player_initial_position	src/graphic/start_var/start_player.c	/^static void	get_player_initial_position(t_mode *mode)$/;"	f	file:
 get_start_end_from_map	src/validation/map_file.c	/^static void	get_start_end_from_map(t_mode *mode, int file_lines)$/;"	f	file:
-get_texture_buffer	src/graphic/start_texture.c	/^static uint32_t	*get_texture_buffer(t_data *img)$/;"	f	file:
+get_texture_buffer	src/graphic/start_var/start_texture.c	/^static uint32_t	*get_texture_buffer(t_data *img)$/;"	f	file:
 get_xlib_include_path	include/minilibx-linux/configure	/^get_xlib_include_path(){$/;"	f
 green	include/struct.h	/^	int	green;$/;"	m	struct:s_rgb
-has_wall_at	src/graphic/player_movement.c	/^static int	has_wall_at(t_mode *mode, float x, float y)$/;"	f	file:
+has_wall_at	src/graphic/update_var/player_movement.c	/^static int	has_wall_at(t_mode *mode, float x, float y)$/;"	f	file:
 height	include/minilibx-linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img
 height	include/struct.h	/^	float	height;$/;"	m	struct:s_player
 height	include/struct.h	/^	int	height;$/;"	m	struct:s_map_size
@@ -310,11 +313,11 @@ image	include/minilibx-linux/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img
 img	include/struct.h	/^	t_data		img;$/;"	m	struct:s_mode
 img	include/struct.h	/^	void	*img;$/;"	m	struct:s_data
 index	include/libft/libft.h	/^	ssize_t		index;$/;"	m	struct:s_variable
-just_close	src/validation/aux_v/exit_and_free.c	/^void	just_close(t_mode *mode)$/;"	f
+just_close	src/exit_and_free.c	/^void	just_close(t_mode *mode)$/;"	f
 key_hook	include/minilibx-linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list
 key_param	include/minilibx-linux/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list
-key_pressed	src/graphic/handle_events.c	/^int	key_pressed(int keycode, t_mode *mode)$/;"	f
-key_release	src/graphic/handle_events.c	/^int	key_release(int key, t_mode *mode)$/;"	f
+key_pressed	src/graphic/update_var/handle_events.c	/^int	key_pressed(int keycode, t_mode *mode)$/;"	f
+key_release	src/graphic/update_var/handle_events.c	/^int	key_release(int key, t_mode *mode)$/;"	f
 key_win1	include/minilibx-linux/test/main.c	/^int	key_win1(int key,void *p)$/;"	f
 key_win2	include/minilibx-linux/test/main.c	/^int	key_win2(int key,void *p)$/;"	f
 key_win3	include/minilibx-linux/test/main.c	/^int	key_win3(int key,void *p)$/;"	f
@@ -432,11 +435,11 @@ parse_args	include/minilibx-linux/configure	/^parse_args(){$/;"	f
 path_existance	src/validation/map_file.c	/^static void	path_existance(t_mode *mode, char *path)$/;"	f	file:
 pix	include/minilibx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img
 player	include/struct.h	/^	t_player	player;$/;"	m	struct:s_mode
-player_movement	src/graphic/player_movement.c	/^void	player_movement(t_mode *mode)$/;"	f
+player_movement	src/graphic/update_var/player_movement.c	/^void	player_movement(t_mode *mode)$/;"	f
 pos	include/struct.h	/^	t_pos	pos;$/;"	m	struct:s_data
 private_cmap	include/minilibx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar
 pshm_format	include/minilibx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar
-read_map	src/graphic/start_player.c	/^static void	read_map(t_mode *mode)$/;"	f	file:
+read_map	src/graphic/start_var/start_player.c	/^static void	read_map(t_mode *mode)$/;"	f	file:
 red	include/struct.h	/^	int	red;$/;"	m	struct:s_rgb
 rgb_aux_separate_ptr	src/validation/aux_v/rgb_aux.c	/^int	rgb_aux_separate_ptr(char *str)$/;"	f
 rgb_c	include/struct.h	/^	int			rgb_c;$/;"	m	struct:s_mode
@@ -463,8 +466,8 @@ s_variable	include/libft/libft.h	/^typedef struct s_variable$/;"	s
 s_win_list	include/minilibx-linux/mlx_int.h	/^typedef struct	s_win_list$/;"	s
 s_xpm_col	include/minilibx-linux/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
 s_xvar	include/minilibx-linux/mlx_int.h	/^typedef struct	s_xvar$/;"	s
-save_initial_angle	src/graphic/start_player.c	/^static void	save_initial_angle(t_mode *mode)$/;"	f	file:
-save_initial_orientation	src/graphic/start_player.c	/^static void	save_initial_orientation(t_mode *mode, char facing)$/;"	f	file:
+save_initial_angle	src/graphic/start_var/start_player.c	/^static void	save_initial_angle(t_mode *mode)$/;"	f	file:
+save_initial_orientation	src/graphic/start_var/start_player.c	/^static void	save_initial_orientation(t_mode *mode, char facing)$/;"	f	file:
 saved_mode	include/minilibx-linux/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v
 screen	include/minilibx-linux/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar
 set_blueprint	src/validation/aux_v/blueprint_aux.c	/^void	set_blueprint(t_mode *mode)$/;"	f
@@ -482,11 +485,11 @@ sl4	include/minilibx-linux/test/main.c	/^int	sl4;$/;"	v
 so	include/struct.h	/^	int			so;$/;"	m	struct:s_mode
 so	include/struct.h	/^	t_data	so;$/;"	m	struct:s_texture
 sprites	include/struct.h	/^	t_texture	sprites;$/;"	m	struct:s_mode
-sprites	src/graphic/start_texture.c	/^static void	sprites(t_data *img, void *mlx, char *path)$/;"	f	file:
-start_enviroments	src/graphic/start_enviroments.c	/^void	start_enviroments(t_mode *mode)$/;"	f
+sprites	src/graphic/start_var/start_texture.c	/^static void	sprites(t_data *img, void *mlx, char *path)$/;"	f	file:
+start_enviroments	src/graphic/start_var/start_enviroments.c	/^void	start_enviroments(t_mode *mode)$/;"	f
 start_game	src/main.c	/^static void	start_game(t_mode *mode)$/;"	f	file:
-start_player_variables	src/graphic/start_player.c	/^void	start_player_variables(t_mode *mode)$/;"	f
-start_textures	src/graphic/start_texture.c	/^void	start_textures(t_mode *mode)$/;"	f
+start_player_variables	src/graphic/start_var/start_player.c	/^void	start_player_variables(t_mode *mode)$/;"	f
+start_textures	src/graphic/start_var/start_texture.c	/^void	start_textures(t_mode *mode)$/;"	f
 store_map_file	src/validation/map_file.c	/^static void	store_map_file(t_mode *mode, int lines, char *path)$/;"	f	file:
 strlcpy_is_not_posix	include/minilibx-linux/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f
 t_bool	include/struct.h	/^}	t_bool;$/;"	t	typeref:enum:e_bool
@@ -518,8 +521,8 @@ true	include/struct.h	/^	true$/;"	e	enum:e_bool
 turn_direction	include/struct.h	/^	int		turn_direction;$/;"	m	struct:s_player
 turn_speed	include/struct.h	/^	float	turn_speed;$/;"	m	struct:s_player
 type	include/minilibx-linux/mlx_int.h	/^	int				type;$/;"	m	struct:s_img
-update_loop	src/graphic/update_loop.c	/^int	update_loop(t_mode *mode)$/;"	f
-update_variable	src/graphic/update_loop.c	/^static void	update_variable(t_mode *mode)$/;"	f	file:
+update_loop	src/graphic/update_var/update_loop.c	/^int	update_loop(t_mode *mode)$/;"	f
+update_variable	src/graphic/update_var/update_loop.c	/^static void	update_variable(t_mode *mode)$/;"	f	file:
 use_xshm	include/minilibx-linux/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar
 valid_comma	src/validation/aux_v/rgb_aux.c	/^void	valid_comma(t_mode *mode, char *str, int comma, int i)$/;"	f
 valid_comma_end	src/validation/aux_v/rgb_aux.c	/^static void	valid_comma_end(t_mode *mode, char *str)$/;"	f	file:

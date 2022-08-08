@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/06 10:43:11 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:04:45 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct s_data
 	t_pos	pos;
 }	t_data;
 
+
+
 typedef struct s_texture
 {
 	t_data	no;
@@ -101,6 +103,8 @@ typedef struct s_mode
 	/* t_texture	texture; */
 	t_mlx		mlx;
 	t_data		img;
+
+	double		dist_proj_plane; //distancia ate a projecao plana/tela |/
 
 	t_player	player;
 	t_map_size	map_size;

@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 10:45:45 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/06 10:47:58 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/07 11:20:12 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int	update_loop(t_mode *mode)
 static void	update_variable(t_mode *mode)
 {
 	player_movement(mode);
+	cast_all_rays(mode);
 }
