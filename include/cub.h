@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/07 11:23:31 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:20:30 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ void	player_movement(t_mode *mode);
 void	free_mlx(t_mode *mode);
 int		close_aplication(t_mode *mode);
 
+	/* raycating */
+void	cast_all_rays(t_mode *mode);
+void	ray_facing(t_utils_ray *utils, float ray_angle);
+float	normalize_angle(float angle);
 
 
 

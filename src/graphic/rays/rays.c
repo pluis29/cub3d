@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 09:13:54 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/07 11:17:04 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/10 10:20:33 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,12 @@ void	cast_all_rays(t_mode *mode)
 
 static void	cast_ray(t_mode *mode, float ray_angle, int	col_id)
 {
+	t_utils_ray	utils;
+	t_aux_ray	horz;
+	t_aux_ray	vert;
 
+	ft_bzero(&utils, sizeof(t_utils_ray));
+	ft_bzero(&mode->rays[col_id], sizeof(t_ray));
+	ray_angle = normalize_angle(ray_angle);
+	ray_facing(&utils, ray_angle);
 }

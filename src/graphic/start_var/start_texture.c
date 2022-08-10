@@ -18,10 +18,10 @@ static uint32_t	*get_texture_buffer(t_data *img);
 
 void	start_textures(t_mode *mode)
 {
-	sprites(&mode->sprites.no, mode->mlx.mlx, mode->texture_path[0][1]);
-	sprites(&mode->sprites.so, mode->mlx.mlx, mode->texture_path[1][1]);
-	sprites(&mode->sprites.we, mode->mlx.mlx, mode->texture_path[2][1]);
-	sprites(&mode->sprites.ea, mode->mlx.mlx, mode->texture_path[3][1]);
+	sprites(&mode->sprites.no, mode->mlx.mlx, mode->temp_texture[0][1]);
+	sprites(&mode->sprites.so, mode->mlx.mlx, mode->temp_texture[1][1]);
+	sprites(&mode->sprites.we, mode->mlx.mlx, mode->temp_texture[2][1]);
+	sprites(&mode->sprites.ea, mode->mlx.mlx, mode->temp_texture[3][1]);
 	mode->textures[0] = get_texture_buffer(&mode->sprites.no);
 	mode->textures[1] = get_texture_buffer(&mode->sprites.so);
 	mode->textures[2] = get_texture_buffer(&mode->sprites.we);

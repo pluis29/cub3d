@@ -45,8 +45,8 @@ void	player_movement(t_mode *mode)
 
 	new_p_x = mode->player.x + cos(mode->player.rotation_angle) * move_step;
 	new_p_y = mode->player.y + sin(mode->player.rotation_angle) * move_step;
-	new_p_x = new_p_x - sin(-mode->player.rotation_angle) * side_step;
-	new_p_y = new_p_y - cos(-mode->player.rotation_angle) * side_step;
+	//new_p_x = new_p_x - sin(-mode->player.rotation_angle) * side_step;
+	//new_p_y = new_p_y - cos(-mode->player.rotation_angle) * side_step;
 
 	if (!has_wall_at(mode, new_p_x, new_p_y)) //verifica se tem parede antes de mudar os valores
 	{
