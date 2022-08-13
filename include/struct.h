@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/09 19:07:54 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:04:47 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 typedef enum e_bool
 {
-	false,
-	true
+	true,
+	false
 }	t_bool;
 
 typedef struct s_rgb

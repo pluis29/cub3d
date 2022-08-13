@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/10 10:20:30 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:15:16 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,74 +23,77 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <math.h>
+# include <limits.h>
 
-int		main(int ac, char **av);
+int			main(int ac, char **av);
 
-/* em criacao */
-	/* MLX SHIT CRIACAO */
-void	start_enviroments(t_mode *mode);
-
-	/* player */
-void	start_player_variables(t_mode *mode);
-
+/* start_var */
 	/* texture */
-void	start_textures(t_mode *mode);
+void		start_textures(t_mode *mode);
+	/* player */
+void		start_player_variables(t_mode *mode);
+	/* start_enviroments */
+void		start_enviroments(t_mode *mode);
 
+/* rays */
+	/* rays */
+void		cast_all_rays(t_mode *mode);
+	/* rays_utils */
+void		get_values_of_ray(t_ray *ray, t_utils_ray utils, t_aux_ray horz, t_aux_ray vert);
+void		get_ray_distance(t_mode *mode, t_aux_ray *horz, t_aux_ray *vert);
+float		normalize_angle(float angle);
+	/* rays_facing */
+void		ray_facing(t_utils_ray *utils, float ray_angle);
+	/* rays_intersection */
+t_aux_ray	horizontal_ray(t_mode *mode, t_utils_ray *utils, float ray_angle);
+t_aux_ray	vertical_ray(t_mode *mode, t_utils_ray *utils, float ray_angle);
+
+
+/* update_var */
 	/* handle_events */
-int		key_pressed(int keycode, t_mode *mode);
-int		key_release(int key, t_mode *mode);
-int		close_aplication(t_mode *mode);
-
-	/* update_loop */
-int		update_loop(t_mode *mode);
-
+int			key_pressed(int keycode, t_mode *mode);
+int			key_release(int key, t_mode *mode);
 	/* player movement */
-void	player_movement(t_mode *mode);
+void		player_movement(t_mode *mode);
+	/* update_loop */
+int			update_loop(t_mode *mode);
 
-	/* free */
-void	free_mlx(t_mode *mode);
-int		close_aplication(t_mode *mode);
-
-	/* raycating */
-void	cast_all_rays(t_mode *mode);
-void	ray_facing(t_utils_ray *utils, float ray_angle);
-float	normalize_angle(float angle);
-
-
-
-
-
-
-
+/* utils */
+		/* utils_map.c */
+int			is_inside_map(t_mode *mode, float x, float y);
+int			has_wall_at(t_mode *mode, float x, float y);
 
 
 /* rgb */
-void	valid_comma(t_mode *mode, char *str, int comma, int i);
-int		rgb_aux_separate_ptr(char *str);
-void	find_rgb(t_mode *mode, int i);
-void	rgb_exists(t_mode *m);
+void		valid_comma(t_mode *mode, char *str, int comma, int i);
+int			rgb_aux_separate_ptr(char *str);
+void		find_rgb(t_mode *mode, int i);
+void		rgb_exists(t_mode *m);
 
 /* texture */
-void	find_texture(t_mode *mode, int i);
+void		find_texture(t_mode *mode, int i);
 
 /* map file*/
-void	check_square_space(t_mode *mode, int posi, int x);
-void	map_file_redirect(t_mode *mode, char *path);
+void		check_square_space(t_mode *mode, int posi, int x);
+void		map_file_redirect(t_mode *mode, char *path);
 
 /* blueprint */
-void	check_square_zero(t_mode *mode, int posi, int x);
-void	check_blueprint(t_mode *mode);
-void	set_blueprint(t_mode *mode);
+void		check_square_zero(t_mode *mode, int posi, int x);
+void		check_blueprint(t_mode *mode);
+void		set_blueprint(t_mode *mode);
 
 /* aux */
-int		skip_space_cmp(const void *s1, const void *s2, size_t n);
-void	look_for_duplicate(t_mode *mode, char *target, int i);
-void	check_end_of_file(t_mode *mode);
-void	look_for_trash(t_mode *mode);
+int			skip_space_cmp(const void *s1, const void *s2, size_t n);
+void		look_for_duplicate(t_mode *mode, char *target, int i);
+void		check_end_of_file(t_mode *mode);
+void		look_for_trash(t_mode *mode);
 
 /* aux free */
-void	close_all(t_mode *mode, char *reason);
-void	free_struct(t_mode *mode);
-void	just_close(t_mode *mode);
+void		close_all(t_mode *mode, char *reason);
+int			close_aplication(t_mode *mode);
+void		free_struct(t_mode *mode);
+void		just_close(t_mode *mode);
+void		free_mlx(t_mode *mode);
+
 
 #endif
