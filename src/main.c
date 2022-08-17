@@ -83,6 +83,12 @@ int	main(int ac, char **av)
 	/* mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0); */
 	/* mlx_loop(mlx); */
 
+	//for(int i=0; mode.temp_texture[i][1] != NULL;i++)
+	//{
+	//	printf("opa :::::: %s\n", mode.temp_texture[i][0]);
+	//	printf("%s\n", mode.temp_texture[i][1]);
+	//}
+
 	start_game(&mode);
 
 	free_struct(&mode);
@@ -165,14 +171,6 @@ static void	start_game(t_mode *mode)
 // 		linha++;
 // 		i++;
 // 	}
-// }
-
-// static void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
-// {
-// 	char	*dst;
-
-// 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-// 	*(unsigned int*)dst = color;
 // }
 
 // static void	read_map(t_mode *mode)

@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/13 13:04:47 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/16 21:28:21 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,22 @@ typedef struct s_rgb
 
 
 //--------------------------MLX GRAPHIC
+typedef struct s_projection
+{
+	float		perp_dist;
+	float		proj_wall_height;
+	int			wall_strip_height;
+	int			wall_top_pixel;
+	int			wall_bottom_pixel;
+	int			x;
+	int			y;
+	int			texture_offset_x;
+	int			texture_off_sety;
+	int			tex_num;
+	int			distance_from_top;
+	uint32_t	texel_color;
+}	t_projection;
+
 typedef struct s_mlx
 {
 	void	*mlx;
@@ -135,7 +151,8 @@ typedef struct s_mode
 {
 	t_rgb		cell_rgb;
 	t_rgb		floor_rgb;
-
+	int			cell;
+	int			floor;
 
 	/* MLX GRAPHIC */
 

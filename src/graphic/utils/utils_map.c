@@ -18,9 +18,9 @@ int	is_inside_map(t_mode *mode, float x, float y)
 {
 	if (x >= 0 && x <= get_lenght(mode, y) * TILE && y >= 0
 		&& y <= mode->map_size.height * TILE)
-		return (0);
+		return (true);
 	else
-		return (1);
+		return (false);
 }
 
 /**
@@ -33,7 +33,7 @@ int	has_wall_at(t_mode *mode, float x, float y)
 
 	if (x < 0 || x >= get_lenght(mode, y) * TILE || y < 0
 		|| y >= mode->map_size.height * TILE) // impede de sair do canvas
-		return (1);
+		return (false);
 	map_grid_indexx = floor(x / TILE); //aonde eu estou por tile para falar especificamente
 	map_grid_indexy = floor(y / TILE);
 	return (mode->blueprint[map_grid_indexy][map_grid_indexx] != '0');//se tem wall true se nao false

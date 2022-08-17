@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/13 13:15:16 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/16 21:15:58 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,20 @@ void		get_ray_distance(t_mode *mode, t_aux_ray *horz, t_aux_ray *vert);
 float		normalize_angle(float angle);
 	/* rays_facing */
 void		ray_facing(t_utils_ray *utils, float ray_angle);
+int			is_ray_facing_down(float angle);
+int			is_ray_facing_left(float angle);
 	/* rays_intersection */
 t_aux_ray	horizontal_ray(t_mode *mode, t_utils_ray *utils, float ray_angle);
 t_aux_ray	vertical_ray(t_mode *mode, t_utils_ray *utils, float ray_angle);
 
+/* render */
+	/* render */
+void		render_game(t_mode *mode);
+	/* render_utils */
+void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void		change_color_intesity(uint32_t *color, float factor);
+void		draw_celling(t_mode *mode, t_projection pr);
+void		draw_floor(t_mode *mode, t_projection pr);
 
 /* update_var */
 	/* handle_events */

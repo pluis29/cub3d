@@ -13,6 +13,7 @@
 
 #ifndef DEFINES_H
 # define DEFINES_H
+# include <math.h>
 
 /* keycode */
 # define TOP 0x77
@@ -35,9 +36,9 @@
 
 /* textures */
 # define NO 0
-# define EA 1
+# define SO 1
 # define WE 2
-# define SO 3
+# define EA 3
 # define NUM_TEXTURES 4
 # define TEXTURE_WIDTH 64
 # define TEXTURE_HEIGHT 64

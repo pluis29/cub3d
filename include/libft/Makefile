@@ -36,7 +36,7 @@ INC			=	-I .
 CFLAGS		=	-Wall -Wextra -Werror
 P_GUARD		=	mkdir -p $(@D)
 RM			=	rm -rf
-CC			=	clang
+CC			=	gcc
 
 all:			$(NAME)
 

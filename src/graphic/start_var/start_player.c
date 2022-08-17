@@ -15,12 +15,12 @@
 static void	save_initial_orientation(t_mode *mode, char facing);
 static void	get_player_initial_position(t_mode *mode);
 static void	save_initial_angle(t_mode *mode);
-static void	read_map(t_mode *mode);
+static int	read_map(char **blueprint);
 
 void	start_player_variables(t_mode *mode)
 {
 	ft_memset(&mode->player, 0, sizeof(t_player));
-	read_map(mode);
+	mode->map_size.height = read_map(mode->blueprint);
 	get_player_initial_position(mode);
 	mode->player.width = 5;
 	mode->player.height = 5;
@@ -31,30 +31,16 @@ void	start_player_variables(t_mode *mode)
 	mode->player.turn_speed = 2 * (PI / 180); //in radians
 }
 
-/**
- * @brief get the height and width of the map in the struct map_size
- */
-static void	read_map(t_mode *mode)
+static int	read_map(char **blueprint)
 {
-	int	i=0;
-	int	x=0;
-	int actual_line=0;
-	int line_size=0;
+	int	i;
 
-	while (mode->blueprint[i] != NULL)
-	{
-		actual_line = 0;
-		while (mode->blueprint[i][x] != '\0')
-		{
-			actual_line++;
-			x++;
-		}
-		if (actual_line > line_size)
-			line_size = actual_line;
+	if (!blueprint)
+		return (0);
+	i = 0;
+	while (blueprint[i])
 		i++;
-	}
-	mode->map_size.height = i;
-	mode->map_size.width = line_size;
+	return (i);
 }
 
 static void	get_player_initial_position(t_mode *mode)

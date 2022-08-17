@@ -6,13 +6,14 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 07:56:28 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/07 11:02:38 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/16 21:30:54 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
 static void	free_images(t_mode *mode);
+static int	mlx_color(t_rgb color);
 
 void	start_enviroments(t_mode *mode)
 {
@@ -23,6 +24,13 @@ void	start_enviroments(t_mode *mode)
 	start_player_variables(mode);
 	start_textures(mode);
 	free_images(mode);
+	mode->cell = mlx_color(mode->cell_rgb);
+	mode->floor = mlx_color(mode->floor_rgb);
+}
+
+static int	mlx_color(t_rgb color)
+{
+	return (color.red << 16 | color.green << 8 | color.blue);
 }
 
 static void	free_images(t_mode *mode)
