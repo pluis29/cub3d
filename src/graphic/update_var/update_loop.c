@@ -19,7 +19,6 @@ int	update_loop(t_mode *mode)
 {
 	update_variable(mode);
 	start_draw(mode);
-
 	return (1);
 }
 

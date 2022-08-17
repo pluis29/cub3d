@@ -19,7 +19,7 @@ static int	read_map(char **blueprint);
 
 void	start_player_variables(t_mode *mode)
 {
-	ft_memset(&mode->player, 0, sizeof(t_player));
+	ft_bzero(&mode->player, sizeof(t_player));
 	mode->map_size.height = read_map(mode->blueprint);
 	get_player_initial_position(mode);
 	mode->player.width = 5;
@@ -75,12 +75,12 @@ static void	save_initial_orientation(t_mode *mode, char facing)
 {
 	if (facing == 'N')
 		mode->player.orientation = NO;
-	else if (facing == 'E')
-		mode->player.orientation = EA;
-	else if (facing == 'W')
-		mode->player.orientation = WE;
 	else if (facing == 'S')
 		mode->player.orientation = SO;
+	else if (facing == 'W')
+		mode->player.orientation = WE;
+	else if (facing == 'E')
+		mode->player.orientation = EA;
 }
 
 static void	save_initial_angle(t_mode *mode)

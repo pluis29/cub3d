@@ -72,6 +72,6 @@ void	get_values_of_ray(t_ray *ray, t_utils_ray utils, t_aux_ray horz,
 			ray->wall_hit_cotent = NO;
 		else
 			ray->wall_hit_cotent = SO;
-		ray->was_hit_vertical = true;
+		ray->was_hit_vertical = false;
 	}
 }

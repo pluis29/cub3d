@@ -14,7 +14,7 @@
 
 static void	projection_values(t_mode *mode, t_projection *pr);
 static void	texture_offset_x(t_mode *mode, t_projection *pr);
-static void	inverse_offset_x(t_ray ray, int *t_offset_x);
+static void	inverse_offset_x(t_ray ray, int *texture_offset_x);
 
 void	render_game(t_mode *mode)
 {
@@ -78,12 +78,12 @@ static void	texture_offset_x(t_mode *mode, t_projection *pr)
 	pr->tex_num = mode->rays[pr->x].wall_hit_cotent;
 }
 
-static void	inverse_offset_x(t_ray ray, int *t_offset_x)
+static void	inverse_offset_x(t_ray ray, int *texture_offset_x)
 {
 	if (ray.was_hit_vertical == false
 		&& is_ray_facing_down(ray.ray_angle) == true)
-		*t_offset_x = TILE - *t_offset_x;
+		*texture_offset_x = TILE - *texture_offset_x;
 	if (ray.was_hit_vertical == true
 		&& is_ray_facing_left(ray.ray_angle) == true)
-		*t_offset_x = TILE - *t_offset_x;
+		*texture_offset_x = TILE - *texture_offset_x;
 }
