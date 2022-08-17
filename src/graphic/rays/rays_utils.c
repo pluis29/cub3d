@@ -6,25 +6,24 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 19:02:59 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/13 13:11:34 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:33:14 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
 static float	distance_between_points(float x1, float y1, float x2,
-		float y2);
+					float y2);
 
-/* matem sempre entre 0 e 2 pi */
+/* keep the angle between 0 and 2 PI */
 float	normalize_angle(float angle)
 {
 	angle = remainder(angle, TWO_PI);
-	if (angle < 0) //se negativo coloca no lado positivo
+	if (angle < 0)
 		angle = TWO_PI + angle;
 	return (angle);
 }
 
-//so se achar uma colisao um hit horizontal ou vertical
 void	get_ray_distance(t_mode *mode, t_aux_ray *horz, t_aux_ray *vert)
 {
 	if (horz->found_wall_hit == true)

@@ -6,13 +6,13 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 09:13:54 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/13 13:16:35 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:26:26 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
-static void	cast_ray(t_mode *mode, float ray_angle, int	col_id);
+static void	cast_ray(t_mode *mode, float ray_angle, int col_id);
 
 /**
  * @brief cast all rays and correct that to not have distortion in projection
@@ -35,7 +35,7 @@ void	cast_all_rays(t_mode *mode)
 	}
 }
 
-static void	cast_ray(t_mode *mode, float ray_angle, int	col_id)
+static void	cast_ray(t_mode *mode, float ray_angle, int col_id)
 {
 	t_utils_ray	utils;
 	t_aux_ray	horz;

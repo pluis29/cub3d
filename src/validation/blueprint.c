@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:07:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/05 20:36:09 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:15:13 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	map_valid_bottom_and_top_row(t_mode *mode)
 	{
 		if (mode->map_file[mode->map_start_in][x] == '1'
 				|| mode->map_file[mode->map_start_in][x] == ' ')
-			continue;
+			continue ;
 		else
 			close_all(mode, INVALID_MAP);
 	}
@@ -52,8 +52,8 @@ static void	map_valid_bottom_and_top_row(t_mode *mode)
 
 static void	map_valid_left_right_column(t_mode *mode)
 {
-	int cpy_start;
-	int len;
+	int	cpy_start;
+	int	len;
 
 	cpy_start = mode->map_start_in;
 	while (mode->map_file[++cpy_start] != NULL && cpy_start < mode->map_end_in)
@@ -69,7 +69,7 @@ static void	map_valid_left_right_column(t_mode *mode)
 				close_all(mode, INVALID_MAP);
 		}
 		else
-				close_all(mode, INVALID_MAP);
+			close_all(mode, INVALID_MAP);
 	}
 }
 
@@ -100,7 +100,7 @@ static void	map_valid_letter(t_mode *mode)
 
 static void	map_valid_middle(t_mode *mode)
 {
-	int cpy_start;
+	int	cpy_start;
 	int	len;
 	int	x;
 
@@ -111,18 +111,13 @@ static void	map_valid_middle(t_mode *mode)
 		x = 0;
 		while (mode->map_file[cpy_start][++x] != '\0' && x < (len - 1))
 		{
-			/* printf("%c", mode->map_file[cpy_start][x]); */
-			if (mode->map_file[cpy_start][x] == '1' || mode->map_file[cpy_start][x] == ' ')
+			if (mode->map_file[cpy_start][x] == '1'
+					|| mode->map_file[cpy_start][x] == ' ')
 				continue ;
-			/* else if (mode->map_file[cpy_start][x] == ' ') */
-			/* 	check_square_space(mode, cpy_start, x); */
 			else if (mode->map_file[cpy_start][x] == '0')
 				check_square_zero(mode, cpy_start, x);
-			//remover esse daqui OOOOOOO
 			else
 				check_square_zero(mode, cpy_start, x);
-
 		}
-		/* printf("\n"); */
 	}
 }

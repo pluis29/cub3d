@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 19:18:12 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/09 00:13:55 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:20:29 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	valid_comma_end(t_mode *mode, char *str);
 
 void	valid_comma(t_mode *mode, char *str, int comma, int i)
 {
-	while(str[++i] != '\0')
+	while (str[++i] != '\0')
 	{
 		if (str[i] == ',')
 			comma++;

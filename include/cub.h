@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:49:15 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/16 21:15:58 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:11:10 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void		start_enviroments(t_mode *mode);
 	/* rays */
 void		cast_all_rays(t_mode *mode);
 	/* rays_utils */
-void		get_values_of_ray(t_ray *ray, t_utils_ray utils, t_aux_ray horz, t_aux_ray vert);
+void		get_values_of_ray(t_ray *ray, t_utils_ray utils, t_aux_ray horz,
+				t_aux_ray vert);
 void		get_ray_distance(t_mode *mode, t_aux_ray *horz, t_aux_ray *vert);
 float		normalize_angle(float angle);
 	/* rays_facing */
@@ -73,7 +74,6 @@ int			update_loop(t_mode *mode);
 int			is_inside_map(t_mode *mode, float x, float y);
 int			has_wall_at(t_mode *mode, float x, float y);
 
-
 /* rgb */
 void		valid_comma(t_mode *mode, char *str, int comma, int i);
 int			rgb_aux_separate_ptr(char *str);
@@ -104,6 +104,5 @@ int			close_aplication(t_mode *mode);
 void		free_struct(t_mode *mode);
 void		just_close(t_mode *mode);
 void		free_mlx(t_mode *mode);
-
 
 #endif

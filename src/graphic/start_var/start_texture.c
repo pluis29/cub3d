@@ -6,15 +6,15 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 19:35:40 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/06 10:43:17 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:38:35 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
 
+static void			sprites(t_data *img, void *mlx, char *path);
 static unsigned int	get_color(t_data *data, int x, int y);
-static void	sprites(t_data *img, void *mlx, char *path);
-static uint32_t	*get_texture_buffer(t_data *img);
+static uint32_t		*get_texture_buffer(t_data *img);
 
 void	start_textures(t_mode *mode)
 {
@@ -30,16 +30,17 @@ void	start_textures(t_mode *mode)
 
 static unsigned int	get_color(t_data *data, int x, int y)
 {
-	char *color;
+	char	*color;
+
 	color = data->addr + (y * data->l_len + x * (data->bpp / 8));
 	return (*(unsigned int *)color);
 }
 
 static uint32_t	*get_texture_buffer(t_data *img)
 {
-	int x;
-	int y;
-	uint32_t *buf;
+	int			x;
+	int			y;
+	uint32_t	*buf;
 
 	buf = ft_calloc(TEXTURE_WIDTH * TEXTURE_HEIGHT, sizeof(uint32_t *));
 	x = -1;

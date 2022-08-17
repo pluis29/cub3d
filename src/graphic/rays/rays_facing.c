@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 10:15:19 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/16 21:16:00 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:25:44 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	is_ray_racing_up(float angle)
 
 static int	is_ray_facing_right(float angle)
 {
-	if (angle < 0.5 * PI || angle > 1.5 * PI) //90degress || 270degress
+	if (angle < 0.5 * PI || angle > 1.5 * PI)
 		return (true);
 	else
 		return (false);

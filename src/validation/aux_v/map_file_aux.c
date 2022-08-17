@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 19:00:26 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/14 18:45:59 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:21:06 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	look_for_trash(t_mode *mode)
 		}
 		else
 		{
-			if(check_veracity(mode->map_file[i], 0) == false)
+			if (check_veracity(mode->map_file[i], 0) == false)
 				close_all(mode, INVALID_ELEMENT);
 		}
 		i++;

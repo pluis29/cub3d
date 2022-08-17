@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 07:56:28 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/16 21:30:54 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:35:47 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	start_enviroments(t_mode *mode)
 {
 	double	fov;
 
-	fov = 60 * (PI / 180); //converte para radians
-	mode->dist_proj_plane = ((WIDTH / 2) / tan(fov / 2)); //importar math.h
+	fov = 60 * (PI / 180);
+	mode->dist_proj_plane = ((WIDTH / 2) / tan(fov / 2));
 	start_player_variables(mode);
 	start_textures(mode);
 	free_images(mode);

@@ -7,3 +7,4 @@ cub3D
 cub3d_destroyer/
 valgrind*
 tags
+compile_flags.txt

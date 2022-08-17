@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 09:09:30 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/04 09:39:59 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:37:25 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	start_player_variables(t_mode *mode)
 	mode->player.walk_direction = 0;
 	save_initial_angle(mode);
 	mode->player.walk_speed = 10;
-	mode->player.turn_speed = 2 * (PI / 180); //in radians
+	mode->player.turn_speed = 2 * (PI / 180);
 }
 
 static int	read_map(char **blueprint)
@@ -55,12 +55,12 @@ static void	get_player_initial_position(t_mode *mode)
 		while (x < ft_strlen(mode->blueprint[y]))
 		{
 			if (mode->blueprint[y][x] == 'N' || mode->blueprint[y][x] == 'S' ||
-				mode->blueprint[y][x] == 'W' || mode->blueprint[y][x] == 'E') // when found we found player position
+				mode->blueprint[y][x] == 'W' || mode->blueprint[y][x] == 'E')
 			{
 				mode->player.x = (x * TILE) + 31;
 				mode->player.y = (y * TILE) + 32;
 				save_initial_orientation(mode, mode->blueprint[y][x]);
-				mode->blueprint[y][x] = '0'; // subtitui a letra por zero
+				mode->blueprint[y][x] = '0';
 				break ;
 			}
 			x++;

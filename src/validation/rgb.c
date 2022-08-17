@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:55:42 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/09 00:05:32 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:19:25 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	find_rgb(t_mode *mode, int i)
 	rgb_validation_setup_colors_struct(mode);
 }
 
-
 /**
  * @brief remove comma from string and transform it into a double pointer for
  * easy access and movement.
@@ -50,12 +49,12 @@ static void	rgb_separate_ptr(t_mode *mode, int i, int x, int d)
 		while (mode->temp_rgb[i][++x] != NULL)
 		{
 			if (rgb_aux_separate_ptr(mode->temp_rgb[i][x]) == true)
-					continue ;
+				continue ;
 			else
 				temp[d++] = ft_split(mode->temp_rgb[i][x], ',');
 		}
 	}
-	rgb_separate_ptr_cont(mode,temp);
+	rgb_separate_ptr_cont(mode, temp);
 	ft_free_triple_ptr(temp);
 }
 
@@ -79,7 +78,6 @@ static void	rgb_separate_ptr_cont(t_mode *mode, char ***temp)
 				close_all(mode, WRONG_RGB);
 			}
 			mode->temp_color[i++] = ft_strdup(temp[d][x++]);
-
 		}
 	}
 }

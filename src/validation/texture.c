@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:45:55 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/09 00:26:13 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:19:50 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	find_texture(t_mode *mode, int i)
 {
 	texture_exists(mode, 0);
 	if (mode->ea == 0 || mode->no == 0 || mode->so == 0 || mode->we == 0
-			|| mode->ht == 1)
+		|| mode->ht == 1)
 		close_all(mode, TEXTURE_NOT_SPECIFIED);
 	mode->temp_texture = (char ***)ft_calloc(5, sizeof(char **));
 	while (i < mode->map_start_in)
@@ -46,7 +46,7 @@ static void	texture_extension(t_mode *mode)
 	while (mode->temp_texture[i] != NULL)
 	{
 		if (ft_cmp_by_start(mode->temp_texture[i][1], ".xpm",
-				(ft_strlen(mode->temp_texture[i][1]) - 4)) != 0)
+			(ft_strlen(mode->temp_texture[i][1]) - 4)) != 0)
 			close_all(mode, WRONG_TEXTURE_TYPE_FILE);
 		i++;
 	}

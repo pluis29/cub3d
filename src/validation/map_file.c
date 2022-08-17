@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:49:20 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/06/10 01:11:39 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:18:16 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	map_file_redirect(t_mode *mode, char *path)
 {
 	if (ft_cmp_by_start(path, ".cub", ft_strlen(path) - 4) != 0)
 		close_all(mode, WRONG_CUB_TYPE_FILE);
-
 	path_existance(mode, path);
-	if (mode->map_file[mode->map_start_in + 1] ==  NULL)
+	if (mode->map_file[mode->map_start_in + 1] == NULL)
 		close_all(mode, INVALID_MAP);
 	look_for_trash(mode);
 	find_texture(mode, 0);
@@ -44,7 +43,7 @@ static void	path_existance(t_mode *mode, char *path)
 	ret_read = read(map_fd, &c, 1);
 	if (ret_read == 0)
 		close_all(mode, EMPTY_CUB_FILE);
-	while(ret_read > 0)
+	while (ret_read > 0)
 	{
 		if (c == '\n' || c == EOF)
 			mode->file_lines++;
@@ -73,22 +72,22 @@ static void	get_start_end_from_map(t_mode *mode, int file_lines)
 	while (mode->map_file[mode->map_start_in + 1] != NULL)
 	{
 		if (mode->map_file[mode->map_start_in][0] == '1')
-			break;
+			break ;
 		if (mode->map_file[mode->map_start_in][0] == '0')
-			break;
+			break ;
 		if (mode->map_file[mode->map_start_in][0] == ' ')
 			if (check_spaced_line(mode->map_file[mode->map_start_in], 1)
-					 == true)
+				== true)
 				break ;
 		mode->map_start_in++;
 	}
 	while (file_lines >= 0)
 	{
 		if (mode->map_file[file_lines][0] == '1')
-			break;
+			break ;
 		if (mode->map_file[file_lines][0] == ' ')
 			if (check_spaced_line(mode->map_file[file_lines], 0)
-					== true)
+				== true)
 				break ;
 		file_lines--;
 	}
@@ -97,7 +96,7 @@ static void	get_start_end_from_map(t_mode *mode, int file_lines)
 
 static int	check_spaced_line(char *str_line, int tag)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str_line[i] == ' ')

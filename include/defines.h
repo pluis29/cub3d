@@ -6,10 +6,9 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 12:51:56 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/13 13:05:46 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:10:15 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef DEFINES_H
 # define DEFINES_H
@@ -24,10 +23,8 @@
 # define ARROW_RIGHT 65363
 # define ESC 0xff1b
 
-/* proporcao da aplicacao */
 # define WIDTH 1200
 # define HEIGHT 800
-
 # define TILE 64
 
 # define PI 3.14159265
@@ -42,12 +39,6 @@
 # define NUM_TEXTURES 4
 # define TEXTURE_WIDTH 64
 # define TEXTURE_HEIGHT 64
-
-
-
-
-
-
 
 # define WRONG_ARGUMENTS "Wrong usage, need two arguments: ./cub3d ./pathToMap"
 /* aux validation */

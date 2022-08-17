@@ -6,7 +6,7 @@
 /*   By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 12:01:59 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/16 21:51:59 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:34:30 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	inverse_offset_x(t_ray ray, int *texture_offset_x);
 
 void	render_game(t_mode *mode)
 {
-	t_projection pr;
+	t_projection	pr;
 
 	ft_bzero(&pr, sizeof(t_projection));
 	while (pr.x < NUM_RAYS)
@@ -48,19 +48,14 @@ void	render_game(t_mode *mode)
 static void	projection_values(t_mode *mode, t_projection *pr)
 {
 	pr->perp_dist = mode->rays[pr->x].distance
-		* cos(mode->rays[pr->x].ray_angle - mode->player.rotation_angle);//get perpendicular distance
+		* cos(mode->rays[pr->x].ray_angle - mode->player.rotation_angle);
 	pr->proj_wall_height = (TILE / pr->perp_dist) * mode->dist_proj_plane;
 	pr->wall_strip_height = (int)pr->proj_wall_height;
-
-	//aonde a wall comeca (top)
 	pr->wall_top_pixel = (HEIGHT / 2) - (pr->wall_strip_height / 2);
-	//se de alguma maneira for menor deixa 0 para comecar no topo
 	if (pr->wall_top_pixel < 0)
 		pr->wall_top_pixel = 0;
 	if (pr->wall_top_pixel >= HEIGHT)
 		pr->wall_top_pixel = HEIGHT;
-
-	//metade da tela desce mais
 	pr->wall_bottom_pixel = (HEIGHT / 2) + (pr->wall_strip_height / 2);
 	if (pr->wall_bottom_pixel >= HEIGHT)
 		pr->wall_bottom_pixel = HEIGHT;

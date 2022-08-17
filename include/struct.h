@@ -6,7 +6,7 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/16 21:28:21 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:09:18 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ typedef struct s_rgb
 	int	blue;
 }	t_rgb;
 
-
-
-
-//--------------------------MLX GRAPHIC
 typedef struct s_projection
 {
 	float		perp_dist;
@@ -71,8 +67,6 @@ typedef struct s_data
 	t_pos	pos;
 }	t_data;
 
-
-
 typedef struct s_texture
 {
 	t_data	no;
@@ -90,15 +84,12 @@ typedef struct s_player
 	float	height;
 	int		turn_direction;
 	int		walk_direction;
-
 	float	rotation_angle;
 	float	walk_speed;
 	float	turn_speed;
-
 	int		orientation;
 	int		side_direction;
 }	t_player;
-
 
 /* variable for size of the map how many bigger rows and columns */
 typedef struct s_map_size
@@ -106,7 +97,6 @@ typedef struct s_map_size
 	int	height;
 	int	width;
 }	t_map_size;
-
 
 typedef struct s_aux_ray
 {
@@ -119,7 +109,7 @@ typedef struct s_aux_ray
 	float	xto_check;
 	float	yto_check;
 	float	hit_distance;
-}			t_aux_ray;
+}	t_aux_ray;
 
 typedef struct s_utils_ray
 {
@@ -131,7 +121,7 @@ typedef struct s_utils_ray
 	int			is_ray_facing_down;
 	int			is_ray_facing_left;
 	int			is_ray_facing_right;
-}			t_utils_ray;
+}	t_utils_ray;
 
 typedef struct s_ray
 {
@@ -141,46 +131,28 @@ typedef struct s_ray
 	float		distance;
 	int			was_hit_vertical;
 	int			wall_hit_cotent;
-}				t_ray;
-
-
-//------------------------------END MLX GRAPHIC
-
+}	t_ray;
 
 typedef struct s_mode
 {
+	t_ray		rays[NUM_RAYS];
+	double		dist_proj_plane;
+
+	t_player	player;
+	t_map_size	map_size;
+
+	t_mlx		mlx;
+	t_data		img;
+	uint32_t	*textures[NUM_TEXTURES];
+	t_texture	sprites;
+
 	t_rgb		cell_rgb;
 	t_rgb		floor_rgb;
 	int			cell;
 	int			floor;
 
-	/* MLX GRAPHIC */
-
-	/* rays */
-	t_ray		rays[NUM_RAYS];
-
-	/* t_texture	texture; */
-	t_mlx		mlx;
-	t_data		img;
-
-	double		dist_proj_plane; //distancia ate a projecao plana/tela |/
-
-	t_player	player;
-	t_map_size	map_size;
-
-	/* stucts textures */
-	char		***texture_path; //AQUIII
-	uint32_t	*textures[NUM_TEXTURES];
-	t_texture	sprites;
-	/****************************/
-	/* end mlx shit */
-
-
-
-	/* --------------------------------------------- */
-	char		**blueprint; // just the map
-	/* all content from map file*/
-	char		**map_file; // all the map in the file
+	char		**blueprint;
+	char		**map_file;
 	char		***temp_texture;
 	char		**temp_color;
 	char		***temp_rgb;
