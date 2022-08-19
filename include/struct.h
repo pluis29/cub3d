@@ -6,14 +6,14 @@
 /*   By: jgomes-c <jgomes-c@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 14:50:21 by lpaulo-d          #+#    #+#             */
-/*   Updated: 2022/08/17 11:09:18 by lpaulo-d         ###   ########.fr       */
+/*   Updated: 2022/08/19 10:05:10 by lpaulo-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-# include <defines.h>
+# include "defines.h"
 # include <stdint.h>
 
 typedef enum e_bool

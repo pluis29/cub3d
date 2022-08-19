@@ -6,7 +6,7 @@
 #    By: lpaulo-d <lpaulo-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/19 19:39:46 by lpaulo-d          #+#    #+#              #
-#    Updated: 2022/06/10 01:11:16 by lpaulo-d         ###   ########.fr        #
+#    Updated: 2022/08/19 10:04:07 by lpaulo-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,6 @@ INC				=	-I $(P_INCLUDE) -I $(P_LIBFT) -I $(P_MLX)
 LIBFT			=	-L $(P_LIBFT) -l ft
 MLX				=	-L $(P_MLX) -lmlx -Ilmlx -lXext -lX11 -lm 
 CFLAGS			=	-Wall -Wextra -Werror -O3 -g #-fsanitize=address
-MFLAGS			=	
 P_GUARD			=	mkdir -p $(@D)
 RM				=	rm -rf
 CC				=	gcc
@@ -64,25 +63,21 @@ $(NAME):		$(OBJ)
 				make --no-print-directory -C $(P_MLX)
 				echo '.o created and moved to obj folder'
 				$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) $(MLX) -o $(NAME)
-				echo 'File(cub3d) created'
 
 $(P_OBJ)%.o:	$(P_SRC)%.c
 				$(P_GUARD)
 				$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 val:
-	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./cub3D assets/mandatory.cub
+				valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./cub3D assets/mandatory.cub
 
 clean:
 				$(RM) $(P_OBJ)
 				make --no-print-directory -C $(P_LIBFT) clean
 				make --no-print-directory -C $(P_MLX) clean
-				echo 'All clean dude'
 
 fclean:			clean
 				$(RM) $(NAME)
-				$(RM) vgcore*
-				$(RM) valgrind*
 				make --no-print-directory -C $(P_LIBFT) fclean
 
 re:				fclean all
