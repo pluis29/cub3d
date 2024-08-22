@@ -1,3 +1,5 @@
+# Cub3D
+
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [Commands](#commands)
